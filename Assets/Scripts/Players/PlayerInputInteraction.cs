@@ -14,7 +14,7 @@ namespace Players
         {
             if (UnityEngine.Input.GetKeyDown(UnityEngine.KeyCode.LeftControl))
             {
-#warning TODO: get from InputService what player pressed the buttong.
+#warning TODO: get from InputService what player pressed the button.
                 Player triggeringPlayer = mCurrentPlayers.FirstOrDefault();
 
                 if (triggeringPlayer != null)
