@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using System;
 
 namespace Players
@@ -36,12 +37,16 @@ namespace Players
         public Player player;
 
 		[HideInInspector]
-        public Vector3 currentVelocity;
+		public Vector3 currentVelocity;
 
-        System.Collections.Generic.HashSet<IPlayerActionObserver>[] mObservers = new System.Collections.Generic.HashSet<IPlayerActionObserver>[(int)ActionType.ACTION_TYPE_COUNT];
+		private Vector3 currentForce;
+
+		System.Collections.Generic.HashSet<IPlayerActionObserver>[] mObservers = new System.Collections.Generic.HashSet<IPlayerActionObserver>[(int)ActionType.ACTION_TYPE_COUNT];
 
         BitArray mOngoingActions = new BitArray((int)ActionType.ACTION_TYPE_COUNT);
-       
+
+		List<ForceModification> transformModifications;
+
         // Use this for initialization
         void Start()
         {
@@ -54,7 +59,9 @@ namespace Players
             {
                 mObservers[i] = new System.Collections.Generic.HashSet<IPlayerActionObserver>();
             }
-        }
+
+			transformModifications = new List<ForceModification>();
+		}
 
         
 
@@ -141,11 +148,31 @@ namespace Players
             transform.rotation = Quaternion.FromToRotation(Vector3.up, currentHeading);
 
             // apply throttle
-            Vector3 currentForce = currentHeading * currentSpeed;
+			currentForce = currentHeading * currentSpeed;
+			currentVelocity = Vector3.Lerp(currentVelocity, currentForce, 0.1f); // HACK
 
-            currentVelocity = Vector3.Lerp(currentVelocity, currentForce, 0.1f); // HACK
-            transform.position = transform.position + currentVelocity * Time.deltaTime;
-        }
+			// Now in LateUpdate
+			//transform.position = transform.position + currentVelocity * Time.deltaTime;
+		}
+
+		// After everything has updated, apply transforms
+		void LateUpdate()
+		{
+			Vector2 compoundForce = currentVelocity;
+			foreach (ForceModification forceMod in transformModifications)
+			{
+				// HACK this only really works for one mod at a time, otherwise effect depends on order
+				compoundForce = Vector2.Lerp(compoundForce, forceMod.vector, forceMod.factor);
+			}
+			transformModifications.Clear(); // only apply once
+
+			transform.position = transform.position + (Vector3)compoundForce * Time.deltaTime;
+		}
+
+		public void AddForceModification(Vector2 force, float factor)
+		{
+			transformModifications.Add(new ForceModification(force, factor));
+		}
 
         private void NotifyAction(ActionType action)
         {

@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4226298323359536}
   - component: {fileID: 114639309866378098}
+  - component: {fileID: 114834751466303878}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -54,3 +55,17 @@ MonoBehaviour:
   PlayerPrefabs:
   - {fileID: 1000012266197472, guid: 26529ab025bacb04da551ddb2919c2e8, type: 2}
   - {fileID: 1000012266197472, guid: 26529ab025bacb04da551ddb2919c2e8, type: 2}
+  TreasureMechanics: {fileID: 0}
+--- !u!114 &114834751466303878
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1763668169551336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7bd073253595dc409a4331745d44e05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numTreasuresUntilApocalypse: 6
+  secondsToElevateATreasure: 1.5
