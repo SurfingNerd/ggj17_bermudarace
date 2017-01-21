@@ -43,27 +43,48 @@ public class PlayerControl : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.RightArrow))
 		{
 			targetHeading.x = 1;
-			targetHeading.y = 0;
+
+			if (!Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.DownArrow))
+			{
+				targetHeading.y = 0;
+			}
 		}
 		if (Input.GetKeyDown(KeyCode.LeftArrow))
 		{
 			targetHeading.x = -1;
-			targetHeading.y = 0;
+
+			if (!Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.DownArrow))
+			{
+				targetHeading.y = 0;
+			}
 		}
 		if (Input.GetKey(KeyCode.UpArrow))
 		{
-			targetHeading.x = 0;
 			targetHeading.y = 1;
+
+			if (!Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow))
+			{
+				targetHeading.x = 0;
+			}
 		}
 		if (Input.GetKey(KeyCode.DownArrow))
 		{
-			targetHeading.x = 0;
 			targetHeading.y = -1;
+
+			if (!Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow))
+			{
+				targetHeading.x = 0;
+			}
 		}
-		//if ((Input.GetKeyUp(KeyCode.UpArrow) && !Input.GetKey(KeyCode.DownArrow)) || (Input.GetKeyUp(KeyCode.DownArrow) && !Input.GetKey(KeyCode.UpArrow)))
-		//{
-		//	targetHeading.y = 0;
-		//}
+
+		if ((Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow)) && !Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.DownArrow))
+		{
+			targetHeading.y = 0;
+		}
+		if ((Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.DownArrow)) && !Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow))
+		{
+			targetHeading.x = 0;
+		}
 
 		// TODO Gamepad
 		
