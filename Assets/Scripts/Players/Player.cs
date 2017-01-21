@@ -27,9 +27,9 @@ namespace Players
 
         //}
 
-		void CraneAction()
-		{
-			requestpickup = true;
-		}
+		//void CraneAction()
+		//{
+		//	requestpickup = true;
+		//}
     }
 }

@@ -7,9 +7,13 @@ using Game;
 
 namespace Treasures
 {
-    public class TreasureInteraction : InputPlayerInteraction
+    public class TreasureInteraction : PlayerInputInteraction
     {
         public Treasure Treasure;
+
+        public TreasureInteraction() : base( PlayerControl.ActionType.CRANE_ACTION)
+        {
+        }
 
         public override void ExecuteAction(Player player)
         {
