@@ -11,9 +11,10 @@ namespace Players
 
 		//HashSet<Treasure>
 
+		[HideInInspector]
 		public PlayerControl Input;
 
-        public GameController GameController;
+		public bool requestpickup = false;
 
 		void Start()
 		{
@@ -25,5 +26,10 @@ namespace Players
         //{
 
         //}
+
+		void CraneAction()
+		{
+			requestpickup = true;
+		}
     }
 }

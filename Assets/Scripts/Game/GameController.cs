@@ -57,7 +57,8 @@ namespace Game
 				// randomize position
 				playerGO.transform.position = new Vector2(UnityEngine.Random.Range(-4, 4), UnityEngine.Random.Range(-3, 3));
 
-				SetInputs(player, id);
+				PlayerControl playerControl = playerGO.GetComponent<PlayerControl>();
+				SetInputs(playerControl, id);
 
 				players.Add(player);
 				return player;
@@ -68,7 +69,7 @@ namespace Game
 			}
 		}
 
-		void SetInputs(Player player, int id)
+		void SetInputs(PlayerControl playerControl, int id)
 		{
 			switch(id)
 			{
@@ -76,10 +77,13 @@ namespace Game
 					// use defaults
 					break;
 				case 2:
-					player.Input.KCUp = KeyCode.W;
-					player.Input.KCDown = KeyCode.S;
-					player.Input.KCLeft = KeyCode.A;
-					player.Input.KCRight = KeyCode.D;
+					playerControl.KCUp = KeyCode.W;
+					playerControl.KCDown = KeyCode.S;
+					playerControl.KCLeft = KeyCode.A;
+					playerControl.KCRight = KeyCode.D;
+
+					playerControl.KCThrottle = KeyCode.LeftControl;
+					playerControl.KCAction1 = KeyCode.E;
 					break;
 			}
 		}

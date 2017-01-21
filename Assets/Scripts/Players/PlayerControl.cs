@@ -17,6 +17,7 @@ namespace Players
 		public KeyCode KCLeft = KeyCode.LeftArrow;
 		public KeyCode KCRight = KeyCode.RightArrow;
 		public KeyCode KCThrottle = KeyCode.Space;
+		public KeyCode KCAction1 = KeyCode.Return;
 
 		private float throttle = 0; // player input speed command
         private float targetSpeed = 0;
@@ -25,7 +26,8 @@ namespace Players
         private Vector3 targetHeading; // direction the player wants to turn to
         private Vector3 currentHeading; // direction the ship is pointing
 
-        private Vector3 currentVelocity;
+		[HideInInspector]
+        public Vector3 currentVelocity;
 
         // Use this for initialization
         void Start()
@@ -39,7 +41,7 @@ namespace Players
         // Update is called once per frame
         void Update()
         {
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKey(KCThrottle))
             {
                 throttle = 1;
             }
@@ -52,52 +54,57 @@ namespace Players
 
 
             // update heading
-            if (Input.GetKeyDown(KeyCode.RightArrow))
+            if (Input.GetKeyDown(KCRight))
             {
                 targetHeading.x = 1;
 
-                if (!Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.DownArrow))
+                if (!Input.GetKey(KCUp) && !Input.GetKey(KCDown))
                 {
                     targetHeading.y = 0;
                 }
             }
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            if (Input.GetKeyDown(KCLeft))
             {
                 targetHeading.x = -1;
 
-                if (!Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.DownArrow))
+                if (!Input.GetKey(KCUp) && !Input.GetKey(KCDown))
                 {
                     targetHeading.y = 0;
                 }
             }
-            if (Input.GetKey(KeyCode.UpArrow))
+            if (Input.GetKey(KCUp))
             {
                 targetHeading.y = 1;
 
-                if (!Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow))
+                if (!Input.GetKey(KCLeft) && !Input.GetKey(KCRight))
                 {
                     targetHeading.x = 0;
                 }
             }
-            if (Input.GetKey(KeyCode.DownArrow))
+            if (Input.GetKey(KCDown))
             {
                 targetHeading.y = -1;
 
-                if (!Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow))
+                if (!Input.GetKey(KCLeft) && !Input.GetKey(KCRight))
                 {
                     targetHeading.x = 0;
                 }
             }
 
-            if ((Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow)) && !Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.DownArrow))
+            if ((Input.GetKeyUp(KCRight) || Input.GetKeyUp(KCLeft)) && !Input.GetKey(KCUp) && !Input.GetKey(KCDown))
             {
                 targetHeading.y = 0;
             }
-            if ((Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.DownArrow)) && !Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow))
+            if ((Input.GetKeyUp(KCUp) || Input.GetKeyUp(KCDown)) && !Input.GetKey(KCLeft) && !Input.GetKey(KCRight))
             {
                 targetHeading.x = 0;
             }
 
+			if(Input.GetKeyDown(KCAction1))
+			{
+				SendMessage("CraneAction");
+			}
+			
             // TODO Gamepad
 
             // TODO interpolate

@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 50076625734110522}
   - component: {fileID: 58778162383136764}
   - component: {fileID: 114979150142008844}
+  - component: {fileID: 114083371520120042}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -106,6 +107,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &114083371520120042
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012266197472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4e21ec44f484c749a04084db507e046, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  Input: {fileID: 0}
 --- !u!114 &114979150142008844
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -120,6 +134,11 @@ MonoBehaviour:
   MaxSpeed: 1
   Acceleration: 1
   TurnSpeed: 1
+  KCDown: 274
+  KCUp: 273
+  KCLeft: 276
+  KCRight: 275
+  KCThrottle: 32
 --- !u!212 &212000013926083090
 SpriteRenderer:
   m_ObjectHideFlags: 1
