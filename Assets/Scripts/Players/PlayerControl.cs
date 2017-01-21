@@ -1,11 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using System;
 
 namespace Players
 {
     public class PlayerControl : MonoBehaviour
     {
+        public enum ActionType
+        {
+            UNDEFINED_ACTION,
+            CRANE_ACTION,
+            ACTION_TYPE_COUNT
+        }
 
         public float MaxSpeed = 1; // units/second  
         public float Acceleration = 1;
@@ -26,9 +32,16 @@ namespace Players
         private Vector3 targetHeading; // direction the player wants to turn to
         private Vector3 currentHeading; // direction the ship is pointing
 
+        [HideInInspector]
+        public Player player;
+
 		[HideInInspector]
         public Vector3 currentVelocity;
 
+        System.Collections.Generic.HashSet<IPlayerActionObserver>[] mObservers = new System.Collections.Generic.HashSet<IPlayerActionObserver>[(int)ActionType.ACTION_TYPE_COUNT];
+
+        BitArray mOngoingActions = new BitArray((int)ActionType.ACTION_TYPE_COUNT);
+       
         // Use this for initialization
         void Start()
         {
@@ -36,11 +49,22 @@ namespace Players
 
             targetHeading = new Vector3(0, 1); // up
             currentHeading = new Vector3(0, 1);
+            player = GetComponent<Player>();
+            for (int i = 0; i < (int)ActionType.ACTION_TYPE_COUNT; i++)
+            {
+                mObservers[i] = new System.Collections.Generic.HashSet<IPlayerActionObserver>();
+            }
         }
+
+        
 
         // Update is called once per frame
         void Update()
         {
+            mOngoingActions.SetAll(false);
+
+            //m_ongoingActions
+
             if (Input.GetKey(KCThrottle))
             {
                 throttle = 1;
@@ -102,8 +126,10 @@ namespace Players
 
 			if(Input.GetKeyDown(KCAction1))
 			{
-				SendMessage("CraneAction");
-			}
+                NotifyAction(ActionType.CRANE_ACTION);
+                
+                //SendMessage("CraneAction");
+            }
 			
             // TODO Gamepad
 
@@ -121,6 +147,37 @@ namespace Players
             transform.position = transform.position + currentVelocity * Time.deltaTime;
         }
 
+        private void NotifyAction(ActionType action)
+        {
+            System.Collections.Generic.HashSet<IPlayerActionObserver> observers = mObservers[(int)action];
+
+            foreach (var observer in observers)
+            {
+                observer.ActionWasExecuted(player, action);
+            }
+        }
+
         // TODO ping treasure, salvage treasure, etc.
+
+
+
+
+        public void RegisterObserver(IPlayerActionObserver observer, ActionType actionType)
+        {
+            mObservers[(int)actionType].Add(observer);
+        }
+
+
+        public void UnRegisterObserver(IPlayerActionObserver observer, ActionType actionType)
+        {
+            mObservers[(int)actionType].Remove(observer);
+        }
     }
+
+
+    public interface IPlayerActionObserver
+    {
+        void ActionWasExecuted(Player player, PlayerControl.ActionType action);
+    }
+    
 }

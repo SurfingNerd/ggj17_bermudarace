@@ -504,6 +504,14 @@ MonoBehaviour:
   MaxSpeed: 1
   Acceleration: 1
   TurnSpeed: 1
+  KCDown: 274
+  KCUp: 273
+  KCLeft: 276
+  KCRight: 275
+  KCThrottle: 32
+  KCAction1: 13
+  player: {fileID: 0}
+  currentVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &2002802211
 MonoBehaviour:
   m_ObjectHideFlags: 0

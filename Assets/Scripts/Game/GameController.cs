@@ -25,30 +25,29 @@ namespace Game
 		}
 
 		public List<GameObject> PlayerPrefabs;
-		public HashSet<Treasure> Treasures;
-		public int numTreasuresUntilApocalypse = 6;
-
 		private List<Player> players;
-		private int numTreasuresPickedUpTotal = 0;
 
 		private Player winningPlayer = null;
+
+		public TreasureMechanics TreasureMechanics;
 
 		void Awake()
 		{
 			instance = this;
 			DontDestroyOnLoad(gameObject);
+
+			TreasureMechanics = GetComponent<TreasureMechanics>();
 		}
 
 		// Use this for initialization
 		void Start()
 		{
-			numTreasuresPickedUpTotal = 0;
 			winningPlayer = null;
 
 			players = new List<Player>();
 			CreatePlayer(1);
 			CreatePlayer(2);
-		}
+        }
 
 		public void Reset()
 		{
@@ -77,8 +76,12 @@ namespace Game
 
 				PlayerControl playerControl = playerGO.GetComponent<PlayerControl>();
 				SetInputs(playerControl, id);
+                playerControl.player = player;
+                players.Add(player);
 
-				players.Add(player);
+                Debug.Log("Adding Player " + player.Name);
+
+
 				return player;
 			}
 			else
@@ -112,14 +115,21 @@ namespace Game
 
 		}
 
-		// TODO implement
 		public void PlayerPickedUpTreasure(Player player, Treasure treasure)
 		{
-			numTreasuresPickedUpTotal++;
-			Debug.Log("Player " + player.Name + " picked up treasure " + treasure.Name);
-			Debug.Log("Total treasures picked up: " + numTreasuresPickedUpTotal + " (" + numTreasuresUntilApocalypse + " until Cthulhu apocalypse)");
+			int t = 0;
+			foreach(Treasure tr in TreasureMechanics.Treasures)
+			{
+				if(tr.LastOwner != null)
+				{
+					t++;
+				}
+			}
 
-			if (numTreasuresPickedUpTotal >= numTreasuresUntilApocalypse)
+			Debug.Log("Player " + player.Name + " picked up treasure " + treasure.Name);
+			Debug.Log("Total treasures picked up: " + t + " (" + TreasureMechanics.numTreasuresUntilApocalypse + " until Cthulhu apocalypse)");
+
+			if (t >= TreasureMechanics.numTreasuresUntilApocalypse)
 			{
 				TriggerApocalypse();
 			}

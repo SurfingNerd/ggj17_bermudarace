@@ -33,15 +33,9 @@ namespace Players
 
         //}
 
-		void CraneAction()
-		{
-			requestpickup = true;
-		}
-
-		// pass param if relevant what the treasure is
-		void CollectedTreasure()
-		{
-			numCollectedTreasures++;
-		}
+		//void CraneAction()
+		//{
+		//	requestpickup = true;
+		//}
     }
 }
