@@ -20,7 +20,7 @@ namespace Treasures
             Debug.Log(player.Name + " collects " + Treasure);
 			//Treasure
 
-			GameController.Instance.PlayerPickedUpTreasure(player, Treasure);
+			//GameController.Instance.PlayerPickedUpTreasure(player, Treasure);
         }
 
         //protected HashSet<Player> mCurrentPlayers = new HashSet<Player>();

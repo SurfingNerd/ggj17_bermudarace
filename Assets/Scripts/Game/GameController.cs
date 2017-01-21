@@ -24,13 +24,11 @@ namespace Game
 		}
 
 		public List<GameObject> PlayerPrefabs;
-		public HashSet<Treasure> Treasures;
-		public int numTreasuresUntilApocalypse = 6;
 
 		private List<Player> players;
-		private int numTreasuresPickedUpTotal = 0;
 
-		void Awake()
+
+        void Awake()
 		{
 			instance = this;
 		}
@@ -94,42 +92,6 @@ namespace Game
 
 		}
 
-		// TODO implement
-		public void PlayerPickedUpTreasure(Player player, Treasure treasure)
-		{
-			numTreasuresPickedUpTotal++;
-			Debug.Log("Player " + player.Name + " picked up treasure " + treasure.Name);
-			Debug.Log("Total treasures picked up: " + numTreasuresPickedUpTotal + " (" + numTreasuresUntilApocalypse + " until Cthulhu apocalypse)");
-
-			if (numTreasuresPickedUpTotal >= numTreasuresUntilApocalypse)
-			{
-				TriggerApocalypse();
-			}
-			else
-			{
-				TreasurePickupConsequence();
-			}
-		}
-
-		private void TriggerApocalypse()
-		{
-			Debug.Log("APOCALPYPSE INCOMING! (todo)");
-
-			// Trigger big Cthulhu - instakill on contact
-			// Trigger a few Deep Ones on islands - slow down players if close
-			// Trigger apocalypse camera filter
-			// Trigger apocalypse music
-
-			// Activate Death trigger at left screen edge
-			// Trigger Camera autoscroll
-		}
-
-		private void TreasurePickupConsequence()
-		{
-			Debug.Log("Treasure pickup consequence... (todo)");
-
-			// Trigger some minor obstacle (at treasure position or random?)
-			// Trigger music change? stinger or ramp up tension level
-		}
+	
 	}
 }
