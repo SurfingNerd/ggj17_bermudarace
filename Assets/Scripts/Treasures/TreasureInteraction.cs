@@ -15,9 +15,14 @@ namespace Treasures
         {
         }
 
+        void Start()
+        {
+            GameController.Instance.TreasureMechanics.InitTreasureInteraction(this);            
+        }
+
         public override void ExecuteAction(Player player)
         {
-            Debug.Log(player.Name + " collects " + Treasure);
+            Debug.Log(player.Name + " collects " + Treasure.Name);
 			//Treasure
 
 			//GameController.Instance.PlayerPickedUpTreasure(player, Treasure);

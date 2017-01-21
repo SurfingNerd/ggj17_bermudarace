@@ -1,6 +1,7 @@
 ﻿using Players;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 namespace Treasures
 {
@@ -11,36 +12,65 @@ namespace Treasures
         public int numTreasuresUntilApocalypse = 6;
 
 
-        [HideInInspector]
-        public HashSet<Treasure> Treasures;
-
-        [HideInInspector]
-        public Dictionary<Treasure, TreasureInteraction> TreasureInteractions = new Dictionary<Treasure, TreasureInteraction>(); 
-
-        public void InitAllTreasures()
+        void Start()
         {
-            //streategy: Loop throught all the TreasureInteraction and invent 1 Treasure for each.
-            GameObject root = GetParentRecursive(gameObject);
+            //UnityEngine.Debug.Log("Starting up Mechanics");
+            //InitAllTreasures();            
+        }
 
-            
-            TreasureInteraction[] allKnownINteractions = root.GetComponentsInChildren<TreasureInteraction>();
+        [HideInInspector]
+        public HashSet<Treasure> Treasures = new HashSet<Treasure>();
 
-            foreach (TreasureInteraction interaction in allKnownINteractions)
-            {
-                Treasure newTreasure = new Treasure();
+        [HideInInspector]
+        public Dictionary<Treasure, TreasureInteraction> TreasureInteractions = new Dictionary<Treasure, TreasureInteraction>();
 
-                Treasures.Add(newTreasure);
-                TreasureInteractions.Add(newTreasure, interaction);
+        //public void InitAllTreasures()
+        //{
+        //    //streategy: Loop throught all the TreasureInteraction and invent 1 Treasure for each.
+        //    GameObject root = GetParentRecursive(gameObject);
 
 
-            }
+        //    TreasureInteraction[] allKnownINteractions = GetAll<TreasureInteraction>(root);
+        //    int treasureNumber = 0;
 
+
+        //    foreach (TreasureInteraction interaction in allKnownINteractions)
+        //    {
+        //        Treasure newTreasure = new Treasure();
+        //        newTreasure.Name = "Treasure " + treasureNumber.ToString(); 
+        //        Treasures.Add(newTreasure);
+        //        TreasureInteractions.Add(newTreasure, interaction);
+
+        //        treasureNumber++;
+        //        UnityEngine.Debug.Log("Hidden Treasure 1");
+        //    }
+
+        //}
+
+        public void InitTreasureInteraction(TreasureInteraction interaction)
+        {
+            int count = Treasures.Count + 1;
+            Treasure treasure = new Treasure();
+            treasure.Name = "Treasure " + count.ToString();
+            interaction.Treasure = treasure;
+            Treasures.Add(treasure);
+            TreasureInteractions.Add(treasure, interaction);
+        }
+
+
+        public static T[] GetAll<T>(GameObject obj)
+        {
+            List<Component> components = new List<Component>();
+            obj.GetComponents(typeof(T), components);
+            components.AddRange(obj.GetComponentsInChildren(typeof(T)));
+
+            return components.Cast<T>().Distinct().ToArray();
         }
 
         private GameObject GetParentRecursive(GameObject obj)
         {
             if (obj.transform.parent == null)
-                return obj.transform.parent.gameObject;
+                return obj;
 
             return GetParentRecursive(obj.transform.parent.gameObject);
         }

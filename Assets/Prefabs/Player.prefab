@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000013057648168}
   - component: {fileID: 212000013926083090}
+  - component: {fileID: 60156361996289890}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Untagged
@@ -36,7 +37,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4000013708284332}
   - component: {fileID: 50076625734110522}
-  - component: {fileID: 58778162383136764}
   - component: {fileID: 114979150142008844}
   - component: {fileID: 114083371520120042}
   m_Layer: 0
@@ -66,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012266197472}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1092291, y: -4.14, z: -6.5117188}
+  m_LocalPosition: {x: 1.5958331, y: -4.2342386, z: -6.5117188}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4000013057648168}
@@ -93,20 +93,28 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &58778162383136764
-CircleCollider2D:
+--- !u!60 &60156361996289890
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012266197472}
+  m_GameObject: {fileID: 1000011168991372}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_Points:
+    m_Paths:
+    - - {x: -0.03, y: 0.325}
+      - {x: -0.089999996, y: 0.305}
+      - {x: -0.14999999, y: 0.24499999}
+      - {x: -0.14999999, y: -0.285}
+      - {x: -0.13, y: -0.33499998}
+      - {x: 0.14999999, y: -0.33499998}
+      - {x: 0.14999999, y: 0.185}
+      - {x: 0.06, y: 0.325}
 --- !u!114 &114083371520120042
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -118,8 +126,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4e21ec44f484c749a04084db507e046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: 
+  Name: SHOULDNOTEXIST
   Input: {fileID: 0}
+  requestpickup: 0
 --- !u!114 &114979150142008844
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -139,6 +148,9 @@ MonoBehaviour:
   KCLeft: 276
   KCRight: 275
   KCThrottle: 32
+  KCAction1: 13
+  player: {fileID: 0}
+  currentVelocity: {x: 0, y: 0, z: 0}
 --- !u!212 &212000013926083090
 SpriteRenderer:
   m_ObjectHideFlags: 1

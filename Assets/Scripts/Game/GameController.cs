@@ -24,14 +24,16 @@ namespace Game
 		}
 
 		public List<GameObject> PlayerPrefabs;
-
 		private List<Player> players;
+
+        public TreasureMechanics TreasureMechanics;
 
 
         void Awake()
 		{
 			instance = this;
-		}
+            TreasureMechanics = GetComponent<TreasureMechanics>();
+        }
 
 		// Use this for initialization
 		void Start()
@@ -39,7 +41,9 @@ namespace Game
 			players = new List<Player>();
 			CreatePlayer(1);
 			CreatePlayer(2);
-		}
+
+            
+        }
 
 		private Player CreatePlayer(int id)
 		{
@@ -57,8 +61,12 @@ namespace Game
 
 				PlayerControl playerControl = playerGO.GetComponent<PlayerControl>();
 				SetInputs(playerControl, id);
+                playerControl.player = player;
+                players.Add(player);
 
-				players.Add(player);
+                Debug.Log("Adding Player " + player.Name);
+
+
 				return player;
 			}
 			else

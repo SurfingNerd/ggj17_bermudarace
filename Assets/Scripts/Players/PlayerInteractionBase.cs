@@ -23,16 +23,23 @@ namespace Players
 
         public void OnTriggerEnter2D(Collider2D collider)
         {
-            Player otherPlayer = collider.gameObject.transform.parent.GetComponent<Player>();
-            if (otherPlayer != null)
+            if (collider.transform.parent != null)
             {
-                Debug.Log("Player " + otherPlayer.Name + " entered " + this.name);
-                mCurrentPlayers.Add(otherPlayer);
-                OnPlayerEntered(otherPlayer);
+                Player otherPlayer = collider.transform.parent.GetComponent<Player>();
+                if (otherPlayer != null)
+                {
+                    Debug.Log("Player " + otherPlayer.Name + " entered " + this.name);
+                    mCurrentPlayers.Add(otherPlayer);
+                    OnPlayerEntered(otherPlayer);
+                }
+                else
+                {
+                    Debug.Log("Unknown Object " + collider.transform.parent.name + " entered " + this.name);
+                }
             }
             else
             {
-                Debug.Log("Unknown Object " + collider.transform.parent.name + " entered " + this.name);
+                Debug.Log("Unknown Object " + collider.name + " entered " + this.name);
             }
         }
 
