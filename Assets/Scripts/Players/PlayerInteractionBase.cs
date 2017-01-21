@@ -45,16 +45,19 @@ namespace Players
 
         public void OnTriggerExit2D(Collider2D collider)
         {
-            Player otherPlayer = collider.gameObject.transform.parent.GetComponent<Player>();
-            if (otherPlayer != null)
+            if (collider.transform.parent != null)
             {
-                Debug.Log("Player " + otherPlayer.Name + " entered " + this.name);
-                mCurrentPlayers.Remove(otherPlayer);
-                OnPlayerEntered(otherPlayer);
-            }
-            else
-            {
-                Debug.Log("Unknown Object " + collider.transform.parent.name + " exited " + this.name);
+                Player otherPlayer = collider.transform.parent.GetComponent<Player>();
+                if (otherPlayer != null)
+                {
+                    Debug.Log("Player " + otherPlayer.Name + " entered " + this.name);
+                    mCurrentPlayers.Remove(otherPlayer);
+                    OnPlayerLeft(otherPlayer);
+                }
+                else
+                {
+                    Debug.Log("Unknown Object " + collider.transform.parent.name + " exited " + this.name);
+                }
             }
         }
     }

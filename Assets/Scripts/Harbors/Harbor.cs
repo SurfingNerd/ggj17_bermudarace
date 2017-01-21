@@ -6,9 +6,9 @@ using Treasures;
 
 namespace Harbors
 {
-    public class Harbor
-    {
-        public string Name;
-        private HashSet<Treasure> m_ownedTreasures; 
-    }
+    //public class Harbor
+    //{
+    //    public string Name;
+    //    //private HashSet<Treasure> m_ownedTreasures; 
+    //}
 }

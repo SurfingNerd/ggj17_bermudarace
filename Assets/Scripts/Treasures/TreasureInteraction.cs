@@ -11,8 +11,24 @@ namespace Treasures
     {
         public Treasure Treasure;
 
+        private Player currentElevatingPlayer;
+        //how many % the treasure is picked up.
+        private double currentPlayersSpentElevationTime;
+        
+
         public TreasureInteraction() : base( PlayerControl.ActionType.CRANE_ACTION)
         {
+        }
+
+        protected override void OnPlayerLeft(Player player)
+        {
+            base.OnPlayerLeft(player);
+            if (currentElevatingPlayer == player)
+            {
+                currentElevatingPlayer = null;
+                currentPlayersSpentElevationTime = 0;
+                Debug.Log("Canceling collecting " + Treasure.Name + " , because " + player.Name + " has left the Area.");
+            }
         }
 
         void Start()
@@ -22,12 +38,52 @@ namespace Treasures
 
         public override void ExecuteAction(Player player)
         {
-            Debug.Log(player.Name + " collects " + Treasure.Name);
-			//Treasure
-
-			//GameController.Instance.PlayerPickedUpTreasure(player, Treasure);
+            if (currentElevatingPlayer == null && Treasure != null)
+            {
+                Debug.Log(player.Name + "starts to collect" + Treasure.Name);
+                currentElevatingPlayer = player;
+                currentPlayersSpentElevationTime = Time.deltaTime;
+                //Treasure
+            }
+            //GameController.Instance.PlayerPickedUpTreasure(player, Treasure);
         }
 
+        void Update()
+        {
+            if ( currentElevatingPlayer != null)
+            {
+                //double spentElevationTime = Time.deltaTime / GameController.Instance.TreasureMechanics.secondsToElevateATreasure;
+                currentPlayersSpentElevationTime += Time.deltaTime;
+
+                if (currentPlayersSpentElevationTime >= GameController.Instance.TreasureMechanics.secondsToElevateATreasure)
+                {
+                    Debug.Log(currentElevatingPlayer.Name + " got Treasure " + Treasure.Name);
+                    GameController.Instance.TreasureMechanics.PlayerPickedUpTreasure(currentElevatingPlayer, Treasure);
+                    currentPlayersSpentElevationTime = 0;
+                    currentElevatingPlayer = null;
+
+                    Deactivate();
+
+                    //TODO: deactivate this spot, since treasure is in ship now.
+                    //it might get reactivated and replaced, if Boat gets destroyed.
+                }
+            }
+        }
+
+        void Deactivate()
+        {
+            Treasure = null;
+            gameObject.SetActive(false);
+
+            //for (int i = 0; i < transform.childCount; i++)
+            //{
+            //    Transform childTransform = transform.GetChild(i);
+            //    childTransform.gameObject.SetActive(false);
+            //    Debug.Log("Setting inactive.");
+            //};
+
+        }
+        
         //protected HashSet<Player> mCurrentPlayers = new HashSet<Player>();
     }
 }

@@ -3,25 +3,42 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Treasures;
 using UnityEngine;
 
 namespace Harbors
 {
-    public class HarborInteraction : PlayerInputInteraction
+    public class HarborInteraction : PlayerInteractionBase
     {
 
+        //[HideInInspector]
+        //public Harbor harbor;
+
         public HarborInteraction()
-            : base( PlayerControl.ActionType.CRANE_ACTION)
         {
 
         }
 
-        [HideInInspector]
-        public Harbor harbor;
-
-        public override void ExecuteAction(Player player)
+        protected override void OnPlayerEntered(Player player)
         {
-            Debug.Log("HaborInteraction");
+            base.OnPlayerEntered(player);
+
+            foreach (Treasure treasure in player.boardedTreasures.ToArray())
+            {
+                player.securedTreasures.Add(treasure);
+            }
+
+            player.boardedTreasures.Clear();
+
+            //TODO: Update UI.
         }
+
+
+        //public override void ExecuteAction(Player player)
+        //{
+        //foreach (Treasure item in player.boardedTreasures.ToArray())
+        //{ 
+        //}
+        //}
     }
 }

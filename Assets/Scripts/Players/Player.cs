@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Game;
+using Treasures;
 
 namespace Players
 {
@@ -19,13 +20,17 @@ namespace Players
 
 		[HideInInspector]
 		public PlayerControl Input;
+        public HashSet<Treasure> boardedTreasures = new HashSet<Treasure>();
+        public HashSet<Treasure> securedTreasures = new HashSet<Treasure>();
 
-		public bool requestpickup = false;
+        
 
 		void Start()
 		{
 			Input = gameObject.GetComponent<PlayerControl>();
 		}
+
+
 		
         // Update is called once per frame
         //void Update()

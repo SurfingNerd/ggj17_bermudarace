@@ -12,6 +12,8 @@ namespace Treasures
         public int numTreasuresUntilApocalypse = 6;
 
 
+        public double secondsToElevateATreasure = 1.5;
+
         void Start()
         {
             //UnityEngine.Debug.Log("Starting up Mechanics");
@@ -23,30 +25,7 @@ namespace Treasures
 
         [HideInInspector]
         public Dictionary<Treasure, TreasureInteraction> TreasureInteractions = new Dictionary<Treasure, TreasureInteraction>();
-
-        //public void InitAllTreasures()
-        //{
-        //    //streategy: Loop throught all the TreasureInteraction and invent 1 Treasure for each.
-        //    GameObject root = GetParentRecursive(gameObject);
-
-
-        //    TreasureInteraction[] allKnownINteractions = GetAll<TreasureInteraction>(root);
-        //    int treasureNumber = 0;
-
-
-        //    foreach (TreasureInteraction interaction in allKnownINteractions)
-        //    {
-        //        Treasure newTreasure = new Treasure();
-        //        newTreasure.Name = "Treasure " + treasureNumber.ToString(); 
-        //        Treasures.Add(newTreasure);
-        //        TreasureInteractions.Add(newTreasure, interaction);
-
-        //        treasureNumber++;
-        //        UnityEngine.Debug.Log("Hidden Treasure 1");
-        //    }
-
-        //}
-
+        
         public void InitTreasureInteraction(TreasureInteraction interaction)
         {
             int count = Treasures.Count + 1;
@@ -55,16 +34,6 @@ namespace Treasures
             interaction.Treasure = treasure;
             Treasures.Add(treasure);
             TreasureInteractions.Add(treasure, interaction);
-        }
-
-
-        public static T[] GetAll<T>(GameObject obj)
-        {
-            List<Component> components = new List<Component>();
-            obj.GetComponents(typeof(T), components);
-            components.AddRange(obj.GetComponentsInChildren(typeof(T)));
-
-            return components.Cast<T>().Distinct().ToArray();
         }
 
         private GameObject GetParentRecursive(GameObject obj)
@@ -82,18 +51,21 @@ namespace Treasures
             numTreasuresPickedUpTotal++;
             Debug.Log("Player " + player.Name + " picked up treasure " + treasure.Name);
             Debug.Log("Total treasures picked up: " + numTreasuresPickedUpTotal + " (" + numTreasuresUntilApocalypse + " until Cthulhu apocalypse)");
+            player.boardedTreasures.Add(treasure);
 
             if (numTreasuresPickedUpTotal >= numTreasuresUntilApocalypse)
             {
-                TriggerApocalypse();
+                TriggerApocalypse(treasure);
             }
             else
             {
-                TreasurePickupConsequence();
+                TreasurePickupConsequence(treasure);
             }
+
+            treasure.LastOwner = player;
         }
 
-        private void TriggerApocalypse()
+        private void TriggerApocalypse(Treasure treasure)
         {
             Debug.Log("APOCALPYPSE INCOMING! (todo)");
 
@@ -106,7 +78,7 @@ namespace Treasures
             // Trigger Camera autoscroll
         }
 
-        private void TreasurePickupConsequence()
+        private void TreasurePickupConsequence(Treasure treasure)
         {
             Debug.Log("Treasure pickup consequence... (todo)");
 
