@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Treasure : MonoBehaviour {
 
+	public string id;
+
 	// Use this for initialization
 	void Start () {
 		
