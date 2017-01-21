@@ -8,7 +8,9 @@ namespace Treasures
 {
     public class TreasureMechanics
     {
-        public Player Player;
-        public HashSet<Treasure> CurrentlyHeldTreasures;
+        
+
+        //public Player Player;
+        //public HashSet<Treasure> CurrentlyHeldTreasures;
     }
 }

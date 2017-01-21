@@ -8,12 +8,14 @@ namespace Game
 {
     public class GameController : MonoBehaviour
     {
+        public GameController Instance;
 
         public HashSet<Treasure> Treasures;
 
-	// Use this for initialization
-	void Start()
+	    // Use this for initialization
+	    void Start()
         {
+            Instance = this;
 
         }
 

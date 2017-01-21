@@ -12,14 +12,14 @@ namespace Players
         protected HashSet<Player> mCurrentPlayers = new HashSet<Player>();
 
         protected virtual void OnPlayerEntered(Player player)
-        { 
+        {
+
         }
 
         protected virtual void OnPlayerLeft(Player player)
         {
 
         }
-
 
         public void OnTriggerEnter2D(Collider2D collider)
         {
@@ -42,7 +42,6 @@ namespace Players
             if (otherPlayer != null)
             {
                 Debug.Log("Player " + otherPlayer.Name + " entered " + this.name);
-
                 mCurrentPlayers.Remove(otherPlayer);
                 OnPlayerEntered(otherPlayer);
             }
