@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000013057648168}
   - component: {fileID: 212000013926083090}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 58778162383136764}
   - component: {fileID: 114979150142008844}
   - component: {fileID: 114083371520120042}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -141,6 +141,7 @@ MonoBehaviour:
   KCRight: 275
   KCThrottle: 32
   KCAction1: 13
+  player: {fileID: 0}
   currentVelocity: {x: 0, y: 0, z: 0}
 --- !u!212 &212000013926083090
 SpriteRenderer:
