@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 using Treasures;
 using Players;
+using UnityEngine.SceneManagement;
 
 namespace Game
 {
@@ -30,17 +31,34 @@ namespace Game
 		private List<Player> players;
 		private int numTreasuresPickedUpTotal = 0;
 
+		private Player winningPlayer = null;
+
 		void Awake()
 		{
 			instance = this;
+			DontDestroyOnLoad(gameObject);
 		}
 
 		// Use this for initialization
 		void Start()
 		{
+			numTreasuresPickedUpTotal = 0;
+			winningPlayer = null;
+
 			players = new List<Player>();
 			CreatePlayer(1);
 			CreatePlayer(2);
+		}
+
+		public void Reset()
+		{
+			foreach(Player player in players)
+			{
+				GameObject.Destroy(player.gameObject);
+			}
+			players.Clear();
+
+			Start();
 		}
 
 		private Player CreatePlayer(int id)
@@ -130,6 +148,21 @@ namespace Game
 
 			// Trigger some minor obstacle (at treasure position or random?)
 			// Trigger music change? stinger or ramp up tension level
+		}
+
+		public void PlayerReachedGoal(Player player)
+		{
+			Debug.Log("Player " + player.Name + " wins!");
+
+			winningPlayer = player;
+			DontDestroyOnLoad(winningPlayer);
+
+			SceneManager.LoadScene("WinScreen");
+		}
+
+		public Player getWinningPlayer()
+		{
+			return winningPlayer;
 		}
 	}
 }

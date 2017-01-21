@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114083371520120042}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,6 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Input: {fileID: 0}
+  requestpickup: 0
 --- !u!114 &114979150142008844
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -139,6 +140,8 @@ MonoBehaviour:
   KCLeft: 276
   KCRight: 275
   KCThrottle: 32
+  KCAction1: 13
+  currentVelocity: {x: 0, y: 0, z: 0}
 --- !u!212 &212000013926083090
 SpriteRenderer:
   m_ObjectHideFlags: 1

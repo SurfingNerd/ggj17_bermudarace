@@ -10,6 +10,12 @@ namespace Players
 		public string Name;
 
 		//HashSet<Treasure>
+		private int numCollectedTreasures = 0;
+		public int NumCollectedTreasures
+		{
+			get { return numCollectedTreasures; }
+			private set { }
+		}
 
 		[HideInInspector]
 		public PlayerControl Input;
@@ -30,6 +36,12 @@ namespace Players
 		void CraneAction()
 		{
 			requestpickup = true;
+		}
+
+		// pass param if relevant what the treasure is
+		void CollectedTreasure()
+		{
+			numCollectedTreasures++;
 		}
     }
 }
