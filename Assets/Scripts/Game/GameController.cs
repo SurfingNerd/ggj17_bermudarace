@@ -112,7 +112,11 @@ namespace Game
 		// Update is called once per frame
 		void Update()
 		{
-
+			// DEBUG
+			if(Input.GetKeyDown(KeyCode.T))
+			{
+				TriggerApocalypse();
+			}
 		}
 
 		public void PlayerPickedUpTreasure(Player player, Treasure treasure)
@@ -147,9 +151,20 @@ namespace Game
 			// Trigger a few Deep Ones on islands - slow down players if close
 			// Trigger apocalypse camera filter
 			// Trigger apocalypse music
+			
+			// Trigger Camera autoscroll
+			Autoscroll autoscroll = Camera.main.GetComponent<Autoscroll>();
+			if(autoscroll != null)
+			{
+				autoscroll.enabled = true;
+			}
 
 			// Activate Death trigger at left screen edge
-			// Trigger Camera autoscroll
+			Transform killbar = Camera.main.transform.FindChild("AutoscrollKillBar");
+			if(killbar != null)
+			{
+				killbar.gameObject.SetActive(true);
+			}
 		}
 
 		private void TreasurePickupConsequence()
@@ -173,6 +188,17 @@ namespace Game
 		public Player getWinningPlayer()
 		{
 			return winningPlayer;
+		}
+
+		public void PlayerDied(Player player)
+		{
+			Debug.Log("Player " + player.Name + " died!");
+			players.Remove(player);
+
+			if(players.Count == 1)
+			{
+				PlayerReachedGoal(players[0]);
+			}
 		}
 	}
 }

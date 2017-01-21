@@ -37,5 +37,13 @@ namespace Players
 		//{
 		//	requestpickup = true;
 		//}
+
+		public void Kill()
+		{
+			// Trigger sinking animation?
+
+			GameController.Instance.PlayerDied(this);
+			GameObject.Destroy(gameObject);
+		}
     }
 }
