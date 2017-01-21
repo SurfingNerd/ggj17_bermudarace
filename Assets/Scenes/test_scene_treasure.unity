@@ -430,7 +430,6 @@ MonoBehaviour:
   MaxSpeed: 1
   Acceleration: 1
   TurnSpeed: 1
-  Player: {fileID: 0}
 --- !u!114 &2002802211
 MonoBehaviour:
   m_ObjectHideFlags: 0
