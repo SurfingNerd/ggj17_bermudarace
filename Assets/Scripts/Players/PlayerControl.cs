@@ -12,7 +12,13 @@ namespace Players
 
         public float TurnSpeed = 1;
 
-        private float throttle = 0; // player input speed command
+		public KeyCode KCDown = KeyCode.DownArrow;
+		public KeyCode KCUp = KeyCode.UpArrow;
+		public KeyCode KCLeft = KeyCode.LeftArrow;
+		public KeyCode KCRight = KeyCode.RightArrow;
+		public KeyCode KCThrottle = KeyCode.Space;
+
+		private float throttle = 0; // player input speed command
         private float targetSpeed = 0;
         private float currentSpeed = 0;
 

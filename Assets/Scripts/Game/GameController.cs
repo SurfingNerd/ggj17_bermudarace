@@ -52,16 +52,35 @@ namespace Game
 			if (playerGO != null)
 			{
 				Player player = playerGO.GetComponent<Player>();
-				players.Add(player);
-
+				player.Name = "Player " + id;
+				
 				// randomize position
 				playerGO.transform.position = new Vector2(UnityEngine.Random.Range(-4, 4), UnityEngine.Random.Range(-3, 3));
 
+				SetInputs(player, id);
+
+				players.Add(player);
 				return player;
 			}
 			else
 			{
 				throw new Exception("Could not instantiate player " + id);
+			}
+		}
+
+		void SetInputs(Player player, int id)
+		{
+			switch(id)
+			{
+				case 1:
+					// use defaults
+					break;
+				case 2:
+					player.Input.KCUp = KeyCode.W;
+					player.Input.KCDown = KeyCode.S;
+					player.Input.KCLeft = KeyCode.A;
+					player.Input.KCRight = KeyCode.D;
+					break;
 			}
 		}
 

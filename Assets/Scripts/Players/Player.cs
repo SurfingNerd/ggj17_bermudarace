@@ -5,8 +5,8 @@ using Game;
 
 namespace Players
 {
-    public class Player
-    {
+    public class Player : MonoBehaviour
+	{
 		public string Name;
 
 		//HashSet<Treasure>
@@ -15,12 +15,11 @@ namespace Players
 
         public GameController GameController;
 
-        // Use this for initialization
-        //void Start()
-        //{
-        //    control = GetComponent<PlayerControl>();
-        //}
-
+		void Start()
+		{
+			Input = gameObject.GetComponent<PlayerControl>();
+		}
+		
         // Update is called once per frame
         //void Update()
         //{

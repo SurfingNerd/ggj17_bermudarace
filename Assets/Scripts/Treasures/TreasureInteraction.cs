@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Players;
 using System;
+using Game;
 
 namespace Treasures
 {
@@ -13,7 +14,9 @@ namespace Treasures
         public override void ExecuteAction(Player player)
         {
             Debug.Log(player.Name + " collects " + Treasure);
-             //Treasure
+			//Treasure
+
+			GameController.Instance.PlayerPickedUpTreasure(player, Treasure);
         }
 
         //protected HashSet<Player> mCurrentPlayers = new HashSet<Player>();
