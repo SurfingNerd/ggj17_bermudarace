@@ -13,3 +13,5 @@ EditorBuildSettings:
     path: Assets/Scenes/WinScreen.unity
   - enabled: 1
     path: Assets/Scenes/art_scene.unity
+  - enabled: 1
+    path: Assets/Scenes/SceneJaques.unity
