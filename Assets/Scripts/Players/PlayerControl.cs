@@ -26,6 +26,8 @@ namespace Players
 		public KeyCode KCThrottle = KeyCode.Space;
 		public KeyCode KCAction1 = KeyCode.Return;
 
+		public int joystickIndex = 0;
+
 		private float throttle = 0; // player input speed command
         private float targetSpeed = 0;
         private float currentSpeed = 0;
@@ -83,7 +85,9 @@ namespace Players
                 throttle = 0;
             }
 
-            targetSpeed = throttle * MaxSpeed * (float)velocityModsTotal;
+			throttle += Input.GetAxis("Fire" + (joystickIndex + 1));
+
+			targetSpeed = throttle * MaxSpeed * (float)velocityModsTotal;
 
 
             // update heading
@@ -123,6 +127,13 @@ namespace Players
                     targetHeading.x = 0;
                 }
             }
+
+			Debug.Log(Input.GetJoystickNames().Length);
+			if(Input.GetJoystickNames().Length >= joystickIndex)
+			{
+				targetHeading.x = Input.GetAxis("Horizontal" + (joystickIndex+1));
+				targetHeading.y = Input.GetAxis("Vertical" + (joystickIndex+1));
+			}
 
             if ((Input.GetKeyUp(KCRight) || Input.GetKeyUp(KCLeft)) && !Input.GetKey(KCUp) && !Input.GetKey(KCDown))
             {

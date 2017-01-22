@@ -107,6 +107,8 @@ namespace Game
 
 					playerControl.KCThrottle = KeyCode.LeftShift;
 					playerControl.KCAction1 = KeyCode.E;
+
+					playerControl.joystickIndex = 1;
 					break;
 			}
 		}
