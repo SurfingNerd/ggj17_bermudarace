@@ -150,8 +150,10 @@ namespace Game
 			// Trigger big Cthulhu - instakill on contact
 			// Trigger a few Deep Ones on islands - slow down players if close
 			// Trigger apocalypse camera filter
+
 			// Trigger apocalypse music
-			
+			SendMessage("SoundTheApocalypseNow");
+
 			// Trigger Camera autoscroll
 			Autoscroll autoscroll = Camera.main.GetComponent<Autoscroll>();
 			if(autoscroll != null)

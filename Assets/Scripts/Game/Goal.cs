@@ -10,7 +10,10 @@ public class Goal : MonoBehaviour {
 	{
 		if(other.gameObject.tag == "Player")
 		{
-			GameController.Instance.SendMessage("PlayerReachedGoal", other.gameObject.GetComponent<Player>());
+			Player player = other.gameObject.GetComponent<Player>();
+			if (player == null) player = other.gameObject.GetComponentInParent<Player>();
+
+			GameController.Instance.PlayerReachedGoal(player);
 		}
 	}
 }
