@@ -88,7 +88,8 @@ namespace Players
                 throttle = 0;
             }
 
-			throttle += Input.GetAxis("Fire" + (joystickIndex + 1));
+			float throttleAxis = Input.GetAxis("Fire" + (joystickIndex + 1));
+			throttle = throttleAxis;
 
 			targetSpeed = throttle * MaxSpeed * (float)velocityModsTotal;
 
@@ -131,14 +132,7 @@ namespace Players
                 }
             }
 
-			//Debug.Log(Input.GetJoystickNames().Length);
-			if(Input.GetJoystickNames().Length >= joystickIndex)
-			{
-				targetHeading.x = Input.GetAxis("Horizontal" + (joystickIndex+1));
-				targetHeading.y = Input.GetAxis("Vertical" + (joystickIndex+1));
-			}
-
-            if ((Input.GetKeyUp(KCRight) || Input.GetKeyUp(KCLeft)) && !Input.GetKey(KCUp) && !Input.GetKey(KCDown))
+			if ((Input.GetKeyUp(KCRight) || Input.GetKeyUp(KCLeft)) && !Input.GetKey(KCUp) && !Input.GetKey(KCDown))
             {
                 targetHeading.y = 0;
             }
@@ -147,7 +141,20 @@ namespace Players
                 targetHeading.x = 0;
             }
 
-			if(Input.GetKeyDown(KCAction1))
+			//Debug.Log(Input.GetJoystickNames().Length);
+			if (Input.GetJoystickNames().Length >= joystickIndex)
+			{
+				float ax = Input.GetAxis("Horizontal" + (joystickIndex + 1));
+				float ay = Input.GetAxis("Vertical" + (joystickIndex + 1));
+
+				// dead zone
+				if (Mathf.Abs(ax) > 0.1) targetHeading.x = ax;
+				if (Mathf.Abs(ay) > 0.1) targetHeading.y = ay;
+			}
+
+			targetHeading.Normalize();
+
+			if (Input.GetKeyDown(KCAction1))
 			{
                 NotifyAction(ActionType.CRANE_ACTION);
                 
