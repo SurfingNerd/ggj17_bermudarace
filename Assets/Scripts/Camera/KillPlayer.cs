@@ -11,7 +11,16 @@ public class KillPlayer : MonoBehaviour {
 	{
 		if(other.gameObject.tag == "Player")
 		{
-			other.gameObject.GetComponent<Player>().Kill();
+			Player player = other.GetComponent<Player>();
+			if (player == null) player = other.GetComponentInParent<Player>();
+			if (player != null)
+			{
+				player.Kill();
+			}
+			else
+			{
+				Debug.Log("player to kill not found!");
+			}
 		}
 	}
 
