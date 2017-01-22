@@ -31,6 +31,8 @@ namespace Game
 
 		public TreasureMechanics TreasureMechanics;
 
+		public GameObject Cthulhu;
+
 		void Awake()
 		{
 			instance = this;
@@ -148,8 +150,14 @@ namespace Game
 			Debug.Log("APOCALPYPSE INCOMING! (todo)");
 
 			// Trigger big Cthulhu - instakill on contact
+			GameObject cthulhu = GameObject.Instantiate(Cthulhu);
+			cthulhu.transform.parent = Camera.main.transform;
+
 			// Trigger a few Deep Ones on islands - slow down players if close
+			// ?
+
 			// Trigger apocalypse camera filter
+			// ?
 
 			// Trigger apocalypse music
 			SendMessage("SoundTheApocalypseNow");

@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4226298323359536}
   - component: {fileID: 114639309866378098}
   - component: {fileID: 114834751466303878}
+  - component: {fileID: 114397370558822786}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -41,6 +42,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114397370558822786
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1763668169551336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47409bc2e9e106449b389d3c6f93d5d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MusicOfTheApocalypse: {fileID: 8300000, guid: 68777787307d0d14e945e5eac6c8ce40,
+    type: 3}
 --- !u!114 &114639309866378098
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -56,6 +70,7 @@ MonoBehaviour:
   - {fileID: 1000012266197472, guid: 26529ab025bacb04da551ddb2919c2e8, type: 2}
   - {fileID: 1000012266197472, guid: 26529ab025bacb04da551ddb2919c2e8, type: 2}
   TreasureMechanics: {fileID: 0}
+  Cthulhu: {fileID: 1933142426533258, guid: 74ecdd1808c6d454f80fae4e207fd8f1, type: 2}
 --- !u!114 &114834751466303878
 MonoBehaviour:
   m_ObjectHideFlags: 1
