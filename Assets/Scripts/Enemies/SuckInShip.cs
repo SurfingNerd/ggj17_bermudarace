@@ -30,7 +30,7 @@ public class SuckInShip : MonoBehaviour {
 			Vector2 shipPos = player.transform.position;
 			Vector2 normal = (((Vector2)transform.position + collider2d.offset) - shipPos);
 			float distance = normal.magnitude;
-			Debug.Log("Maelstrom tracking ship, distance: " + distance);
+			//Debug.Log("Maelstrom tracking ship, distance: " + distance);
 
 			float effect = (collider2d.radius - distance) / collider2d.radius; // normed from 0 (at edge) to 1 (center)
 			if (effect > 0)
