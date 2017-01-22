@@ -1,4 +1,5 @@
-﻿using Players;
+﻿using Game;
+using Players;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,7 @@ namespace Harbors
         {
             base.OnPlayerEntered(player);
 
+            GameController.Instance.TreasureMechanics.PlayerReturnedTreasures(player, player.boardedTreasures);
             foreach (Treasure treasure in player.boardedTreasures.ToArray())
             {
                 player.Input.RemoveVelocityMod(treasure);
@@ -31,6 +33,10 @@ namespace Harbors
             }
 
             player.boardedTreasures.Clear();
+
+            
+            // PlayerReturnedTreasures
+
 
             //TODO: Update UI.
         }

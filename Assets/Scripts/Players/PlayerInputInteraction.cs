@@ -15,7 +15,6 @@ namespace Players
         protected override void OnPlayerEntered(Player player)
         {
             base.OnPlayerEntered(player);
-
             player.Input.RegisterObserver(this, PlayerControl.ActionType.CRANE_ACTION);
         }
 
