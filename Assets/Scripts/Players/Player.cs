@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Game;
 using Treasures;
+using Assets.Buffs;
 
 namespace Players
 {
@@ -20,14 +21,19 @@ namespace Players
 
 		[HideInInspector]
 		public PlayerControl Input;
+        public BuffMechanics BuffMechanics;
+
         public HashSet<Treasure> boardedTreasures = new HashSet<Treasure>();
         public HashSet<Treasure> securedTreasures = new HashSet<Treasure>();
 
         
 
-		void Start()
+        
+
+		void Awake()
 		{
 			Input = gameObject.GetComponent<PlayerControl>();
+            BuffMechanics = gameObject.GetComponent<BuffMechanics>();
 		}
 
 
