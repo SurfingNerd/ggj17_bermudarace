@@ -14,16 +14,16 @@ public class GlowSinus : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		t = 0;
+		//t = 0;
 
-		rend = GetComponent<Renderer>();
-		col = rend.material.color;
+		//rend = GetComponent<Renderer>();
+		//col = rend.material.color;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		t += Time.deltaTime;
-		col.a = minValue + (1 - minValue * Mathf.Sin(t * Speed));
-		rend.material.color = col;
+		//t += Time.deltaTime;
+		//col.a = minValue + (1 - minValue * Mathf.Sin(t * Speed));
+		//rend.material.color = col;
 	}
 }

@@ -49,8 +49,11 @@ namespace Treasures
         public void PlayerReturnedTreasures(Player player, IEnumerable<Treasure> treasures)
         {
             AudioSource audioSource = GetComponent<AudioSource>();
-            Debug.Log("Player returned treasures. playing " + audioGotTreasure.name + " on " + audioSource.name);
-            audioSource.PlayOneShot(audioGotTreasure);
+            if (audioSource != null)
+            {
+                Debug.Log("Player returned treasures. playing " + audioGotTreasure.name + " on " + audioSource.name);
+                audioSource.PlayOneShot(audioGotTreasure);
+            }
         }
 
         // TODO implement

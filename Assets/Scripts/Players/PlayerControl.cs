@@ -57,7 +57,7 @@ namespace Players
 
         BitArray mOngoingActions = new BitArray((int)ActionType.ACTION_TYPE_COUNT);
 
-		List<ForceModification> transformModifications;
+        List<ForceModification> transformModifications = new List<ForceModification>();
 
         // Use this for initialization
         void Start()
@@ -131,7 +131,7 @@ namespace Players
                 }
             }
 
-			Debug.Log(Input.GetJoystickNames().Length);
+			//Debug.Log(Input.GetJoystickNames().Length);
 			if(Input.GetJoystickNames().Length >= joystickIndex)
 			{
 				targetHeading.x = Input.GetAxis("Horizontal" + (joystickIndex+1));

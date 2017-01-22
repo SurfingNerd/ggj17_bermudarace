@@ -7,7 +7,7 @@ namespace Effects
     public class PulsingEffect  : MonoBehaviour
     {
         public float pulseRate = 1;
-
+        public float minSize = 0.5f;
         //pulsing heart
         //m_currentState holds value between 0.5 - 1
         //private List<RectTransform> m_rectTransforms;
@@ -36,7 +36,7 @@ namespace Effects
             else
             {
                 m_currentState -= Time.deltaTime * pulseRate;
-                if (m_currentState <= 0.5)
+                if (m_currentState <= minSize)
                 {
                     isGoingUp = true;
                 }

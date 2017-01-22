@@ -27,6 +27,7 @@ public class SuckInShip : MonoBehaviour {
 
 		foreach (Player player in trappedShips)
 		{
+            
 			Vector2 shipPos = player.transform.position;
 			Vector2 normal = (((Vector2)transform.position + collider2d.offset) - shipPos);
 			float distance = normal.magnitude;
