@@ -89,7 +89,7 @@ namespace Players
             }
 
 			float throttleAxis = Input.GetAxis("Fire" + (joystickIndex + 1));
-			throttle = throttleAxis;
+			throttle = Mathf.Abs(throttleAxis); // in release version direction is mismatched
 			if(throttle == 0)
 			{
 				throttle = Input.GetButton("Jump" + (joystickIndex + 1)) ? 1 : 0;
