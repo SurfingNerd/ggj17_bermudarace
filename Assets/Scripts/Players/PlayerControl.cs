@@ -15,9 +15,9 @@ namespace Players
         }
 
         public float MaxSpeed = 1; // units/second  
-        public float Acceleration = 1;
-
         public float TurnSpeed = 1;
+
+        private double velocityModsTotal = 1;
 
 		public KeyCode KCDown = KeyCode.DownArrow;
 		public KeyCode KCUp = KeyCode.UpArrow;
@@ -32,6 +32,8 @@ namespace Players
 
         private Vector3 targetHeading; // direction the player wants to turn to
         private Vector3 currentHeading; // direction the ship is pointing
+
+        private VelocityModCollection velocityMods = new VelocityModCollection();
 
         [HideInInspector]
         public Player player;
@@ -81,7 +83,7 @@ namespace Players
                 throttle = 0;
             }
 
-            targetSpeed = throttle * MaxSpeed;
+            targetSpeed = throttle * MaxSpeed * (float)velocityModsTotal;
 
 
             // update heading
@@ -199,7 +201,51 @@ namespace Players
         {
             mObservers[(int)actionType].Remove(observer);
         }
+
+        public void AddVelocityMod(object source, double factor)
+        {
+            velocityMods.Add(new VelocityMod(source, factor));
+            ReclalcVelocityMods();
+        }
+
+        public void RemoveVelocityMod(object source)
+        {
+            velocityMods.Remove(source);
+            ReclalcVelocityMods();
+        }
+
+        private void ReclalcVelocityMods()
+        {
+            velocityModsTotal = 1;
+
+            foreach (VelocityMod mod in velocityMods)
+            {
+                velocityModsTotal *= mod.VelocityMultiplier;
+            }
+        }
+
     }
+
+    public class VelocityMod
+    {
+        public VelocityMod(object sourceObject, double velocityMultiplier)
+        {
+            SourceObject = sourceObject;
+            VelocityMultiplier = velocityMultiplier;
+        }
+
+        public object SourceObject;
+        public double VelocityMultiplier;
+    }
+
+    public class VelocityModCollection : System.Collections.ObjectModel.KeyedCollection<object, VelocityMod>
+    {
+        protected override object GetKeyForItem(VelocityMod item)
+        {
+            return item.SourceObject;
+        }
+    }
+
 
 
     public interface IPlayerActionObserver
