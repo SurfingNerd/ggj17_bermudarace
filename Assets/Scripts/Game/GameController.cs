@@ -105,7 +105,7 @@ namespace Game
 					playerControl.KCLeft = KeyCode.A;
 					playerControl.KCRight = KeyCode.D;
 
-					playerControl.KCThrottle = KeyCode.LeftControl;
+					playerControl.KCThrottle = KeyCode.LeftShift;
 					playerControl.KCAction1 = KeyCode.E;
 					break;
 			}
