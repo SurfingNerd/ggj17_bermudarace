@@ -24,16 +24,19 @@ namespace Harbors
         {
             base.OnPlayerEntered(player);
 
-            GameController.Instance.TreasureMechanics.PlayerReturnedTreasures(player, player.boardedTreasures);
-            foreach (Treasure treasure in player.boardedTreasures.ToArray())
+            if (player.boardedTreasures.Count > 0)
             {
-                player.Input.RemoveVelocityMod(treasure);
-                player.securedTreasures.Add(treasure);
-                player.BuffMechanics.AddSpeedupBuff();
+                GameController.Instance.TreasureMechanics.PlayerReturnedTreasures(player, player.boardedTreasures);
+
+                foreach (Treasure treasure in player.boardedTreasures.ToArray())
+                {
+                    player.Input.RemoveVelocityMod(treasure);
+                    player.securedTreasures.Add(treasure);
+                    player.BuffMechanics.AddSpeedupBuff();
+                }
+
+                player.boardedTreasures.Clear();
             }
-
-            player.boardedTreasures.Clear();
-
             
             // PlayerReturnedTreasures
 

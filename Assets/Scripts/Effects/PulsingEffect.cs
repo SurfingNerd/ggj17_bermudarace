@@ -18,8 +18,9 @@ namespace Effects
         // Use this for initialization
         void Start()
         {
-            //rectTransform = GetComponent<Tran;  
+            m_currentState = Random.value;
 
+            //rectTransform = GetComponent<Tran;  
         }
 
         // Update is called once per frame
