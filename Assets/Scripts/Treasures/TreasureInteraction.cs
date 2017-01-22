@@ -7,7 +7,7 @@ using Game;
 
 namespace Treasures
 {
-    public class TreasureInteraction : PlayerInputInteraction
+    public class TreasureInteraction : PlayerInteractionBase
     {
         public Treasure Treasure;
 
@@ -16,7 +16,7 @@ namespace Treasures
         private double currentPlayersSpentElevationTime;
         
 
-        public TreasureInteraction() : base( PlayerControl.ActionType.CRANE_ACTION)
+        public TreasureInteraction() : base()
         {
         }
 
@@ -31,12 +31,7 @@ namespace Treasures
             }
         }
 
-        void Start()
-        {
-            GameController.Instance.TreasureMechanics.InitTreasureInteraction(this);            
-        }
-
-        public override void ExecuteAction(Player player)
+        protected override void OnPlayerEntered(Player player)
         {
             if (currentElevatingPlayer == null && Treasure != null)
             {
@@ -45,8 +40,13 @@ namespace Treasures
                 currentPlayersSpentElevationTime = Time.deltaTime;
                 //Treasure
             }
-            //GameController.Instance.PlayerPickedUpTreasure(player, Treasure);
         }
+
+        void Start()
+        {
+            GameController.Instance.TreasureMechanics.InitTreasureInteraction(this);            
+        }
+
 
         void Update()
         {
