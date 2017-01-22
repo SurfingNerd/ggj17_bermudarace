@@ -25,6 +25,7 @@ namespace Harbors
 
             foreach (Treasure treasure in player.boardedTreasures.ToArray())
             {
+                player.Input.RemoveVelocityMod(treasure);
                 player.securedTreasures.Add(treasure);
                 player.BuffMechanics.AddSpeedupBuff();
             }
