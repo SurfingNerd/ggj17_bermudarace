@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212921702804606416}
   - component: {fileID: 114220982223338128}
   - component: {fileID: 58555271432562214}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Statue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4024239586445956}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TreasureA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
