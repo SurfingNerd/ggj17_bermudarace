@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class TitleScreen : MonoBehaviour {
 
-	public string NextScene = "test_scene";
+	public string NextScene = "SceneJaques";
 
 	// Use this for initialization
 	void Start () {

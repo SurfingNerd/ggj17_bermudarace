@@ -83,4 +83,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numTreasuresUntilApocalypse: 6
+  audioGotTreasure: {fileID: 0}
   secondsToElevateATreasure: 1.5
