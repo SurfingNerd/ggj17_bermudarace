@@ -7,6 +7,14 @@ namespace Players
 {
     public class PlayerControl : MonoBehaviour
     {
+        public PlayerControl()
+        {
+            for (int i = 0; i < (int)ActionType.ACTION_TYPE_COUNT; i++)
+            {
+                mObservers[i] = new System.Collections.Generic.HashSet<IPlayerActionObserver>();
+            }
+        }
+
         public enum ActionType
         {
             UNDEFINED_ACTION,
@@ -57,11 +65,6 @@ namespace Players
             targetHeading = new Vector3(0, 1); // up
             currentHeading = new Vector3(0, 1);
             player = GetComponent<Player>();
-            for (int i = 0; i < (int)ActionType.ACTION_TYPE_COUNT; i++)
-            {
-                mObservers[i] = new System.Collections.Generic.HashSet<IPlayerActionObserver>();
-            }
-
 			transformModifications = new List<ForceModification>();
 		}
 

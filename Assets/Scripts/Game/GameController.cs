@@ -121,31 +121,7 @@ namespace Game
 			}
 		}
 
-		public void PlayerPickedUpTreasure(Player player, Treasure treasure)
-		{
-			int t = 0;
-			foreach(Treasure tr in TreasureMechanics.Treasures)
-			{
-				if(tr.LastOwner != null)
-				{
-					t++;
-				}
-			}
-
-			Debug.Log("Player " + player.Name + " picked up treasure " + treasure.Name);
-			Debug.Log("Total treasures picked up: " + t + " (" + TreasureMechanics.numTreasuresUntilApocalypse + " until Cthulhu apocalypse)");
-
-			if (t >= TreasureMechanics.numTreasuresUntilApocalypse)
-			{
-				TriggerApocalypse();
-			}
-			else
-			{
-				TreasurePickupConsequence();
-			}
-		}
-
-		private void TriggerApocalypse()
+		public void TriggerApocalypse()
 		{
 			Debug.Log("APOCALPYPSE INCOMING! (todo)");
 
@@ -177,15 +153,7 @@ namespace Game
 			}
 		}
 
-		private void TreasurePickupConsequence()
-		{
-			Debug.Log("Treasure pickup consequence... (todo)");
-
-			// Trigger some minor obstacle (at treasure position or random?)
-			// Trigger music change? stinger or ramp up tension level
-		}
-
-		public void PlayerReachedGoal(Player player)
+        public void PlayerReachedGoal(Player player)
 		{
 			Debug.Log("Player " + player.Name + " wins!");
 
