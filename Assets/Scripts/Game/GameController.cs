@@ -98,6 +98,7 @@ namespace Game
 			{
 				case 1:
 					// use defaults
+					playerControl.joystickIndex = 0;
 					break;
 				case 2:
 					playerControl.KCUp = KeyCode.W;
@@ -120,6 +121,11 @@ namespace Game
 			if(Input.GetKeyDown(KeyCode.T))
 			{
 				TriggerApocalypse();
+			}
+
+			if(Input.GetKeyDown(KeyCode.Escape))
+			{
+				SceneManager.LoadScene("00_titlescreen");
 			}
 		}
 

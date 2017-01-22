@@ -90,6 +90,10 @@ namespace Players
 
 			float throttleAxis = Input.GetAxis("Fire" + (joystickIndex + 1));
 			throttle = throttleAxis;
+			if(throttle == 0)
+			{
+				throttle = Input.GetButton("Jump" + (joystickIndex + 1)) ? 1 : 0;
+			}
 
 			targetSpeed = throttle * MaxSpeed * (float)velocityModsTotal;
 
