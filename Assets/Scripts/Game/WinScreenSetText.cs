@@ -19,7 +19,7 @@ public class WinScreenSetText : MonoBehaviour {
 		if (winningPlayer != null && text != null)
 		{
 			text.text = text.text.Replace("[P]", winningPlayer.Name);
-			text.text = text.text.Replace("[T]", winningPlayer.NumCollectedTreasures+"");
+			text.text = text.text.Replace("[T]", winningPlayer.securedTreasures.Count+"");
 		}
 		else
 		{
