@@ -27,7 +27,6 @@ public class WinScreen : MonoBehaviour {
 					{
 						GameObject.Destroy(winningPlayer.gameObject);
 					}
-
 				}
 
 				GameObject.Destroy(GameController.Instance.gameObject);

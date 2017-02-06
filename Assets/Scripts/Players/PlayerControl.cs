@@ -195,7 +195,8 @@ namespace Players
 			}
 			transformModifications.Clear(); // only apply once
 
-			transform.position = transform.position + (Vector3)compoundForce * Time.deltaTime;
+            //transform.position = transform.position + (Vector3)compoundForce * Time.deltaTime;
+            transform.GetComponent<Rigidbody2D>().AddForce(compoundForce * Time.deltaTime * 100) ;
 		}
 
 		public void AddForceModification(Vector2 force, float factor)
