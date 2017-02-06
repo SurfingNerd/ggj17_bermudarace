@@ -86,7 +86,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 0.75
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: 68a630f60ac81a44a890fe27d94b3f78, type: 2}
@@ -160,6 +160,7 @@ MonoBehaviour:
   KCRight: 275
   KCThrottle: 32
   KCAction1: 13
+  joystickIndex: 0
   player: {fileID: 0}
   currentVelocity: {x: 0, y: 0, z: 0}
 --- !u!212 &212000013926083090

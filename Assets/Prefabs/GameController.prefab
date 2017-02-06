@@ -110,7 +110,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -152,6 +152,7 @@ MonoBehaviour:
   - {fileID: 1000012266197472, guid: 26529ab025bacb04da551ddb2919c2e8, type: 2}
   TreasureMechanics: {fileID: 0}
   Cthulhu: {fileID: 1933142426533258, guid: 74ecdd1808c6d454f80fae4e207fd8f1, type: 2}
+  Players: 1
 --- !u!114 &114834751466303878
 MonoBehaviour:
   m_ObjectHideFlags: 1

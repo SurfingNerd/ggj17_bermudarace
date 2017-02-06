@@ -33,6 +33,8 @@ namespace Game
 
 		public GameObject Cthulhu;
 
+        public int Players = 1;
+
 		void Awake()
 		{
 			instance = this;
@@ -47,8 +49,13 @@ namespace Game
 			winningPlayer = null;
 
 			players = new List<Player>();
-			CreatePlayer(1);
-			CreatePlayer(2);
+
+            for (int i = 1; i <= Players; i++)
+            {
+                CreatePlayer(i);
+            }
+			//CreatePlayer(1);
+			//CreatePlayer(2);
         }
 
 		public void Reset()
@@ -58,8 +65,7 @@ namespace Game
 				GameObject.Destroy(player.gameObject);
 			}
 			players.Clear();
-
-			Start();
+            Start();
 		}
 
 		private Player CreatePlayer(int id)
@@ -185,6 +191,11 @@ namespace Game
 			{
 				PlayerReachedGoal(players[0]);
 			}
+
+            if (players.Count == 0)
+            {
+                Application.LoadLevel(Application.loadedLevel);
+            }
 		}
 	}
 }

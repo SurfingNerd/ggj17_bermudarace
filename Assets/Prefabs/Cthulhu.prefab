@@ -409,14 +409,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdfa720e4cd0b5b428eba598faed0c1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  appearDuration: 3
-  moveAmplitude: 1
-  moveSpeed: 1
+  appearDuration: 4
+  moveAmplitude: 2
+  moveSpeed: 2
   appearVortex: {fileID: 1730686411263534}
   topVortex: {fileID: 1668960456785774}
   bottomVortex: {fileID: 1463911589391530}
   spriteScale: {x: 2, y: 1.5, z: 1}
-  screenShakeStrength: 0.1
+  screenShakeStrength: 0.3
 --- !u!114 &114431037166407116
 MonoBehaviour:
   m_ObjectHideFlags: 1

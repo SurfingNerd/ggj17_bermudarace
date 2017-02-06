@@ -65,7 +65,8 @@ public class Cthulhu : MonoBehaviour {
 					
 					// screenshake
 					Camera.main.transform.position = cachedCamPos + screenShakeStrength * (0.5f - Mathf.Abs(t - 0.5f)) * new Vector3(Mathf.Sin(50 * t), Mathf.Sin(63 * t));
-				}
+                    appearDuration = appearDuration / 2; //each appear is faster
+                }
 				else
 				{
 					appearVortex.transform.localScale = Vector3.one;

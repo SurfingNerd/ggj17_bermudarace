@@ -54,7 +54,7 @@ namespace Players
 			// Trigger sinking animation?
 
 			GameController.Instance.PlayerDied(this);
-			GameObject.Destroy(gameObject);
-		}
+            GameObject.Destroy(gameObject);
+        }
     }
 }
