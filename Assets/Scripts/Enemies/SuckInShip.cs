@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class SuckInShip : MonoBehaviour {
 
-	public float edgeForce = 0.2f;
-	public float centerForce = 0.6f;
+	public float edgeForce = 0.4f;
+	public float centerForce = 0.7f;
 
 	public float edgeTwist = 2f;
 	public float centerTwist = 4f;

@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4190593698292698}
   - component: {fileID: 212788854098711310}
   - component: {fileID: 114649334485034464}
-  - component: {fileID: 58135604359636832}
+  - component: {fileID: 70798215388424456}
   m_Layer: 0
   m_Name: Lighthouse
   m_TagString: Untagged
@@ -66,15 +66,15 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1417424293749634}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.41, y: 1.46, z: 0}
+  m_LocalPosition: {x: -0.9740801, y: -1.4927831, z: 0}
   m_LocalScale: {x: 0.10351599, y: 0.10351599, z: 0.51758}
   m_Children:
   - {fileID: 4049969242864576}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &58135604359636832
-CircleCollider2D:
+--- !u!70 &70798215388424456
+CapsuleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -84,9 +84,9 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: -1.6}
-  serializedVersion: 2
-  m_Radius: 6.49
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 10, y: 16}
+  m_Direction: 0
 --- !u!114 &114318190805942902
 MonoBehaviour:
   m_ObjectHideFlags: 1
