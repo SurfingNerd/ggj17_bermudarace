@@ -5,13 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/00_titlescreen.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/thomas_scene_empty.unity
   - enabled: 0
     path: Assets/Scenes/test_scene.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/WinScreen.unity
   - enabled: 0
     path: Assets/Scenes/art_scene.unity

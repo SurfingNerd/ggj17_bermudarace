@@ -15,13 +15,13 @@ public class TitleScreen : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.Escape))
-		{
-			Application.Quit();
-		}
-		else if (Input.anyKeyDown || Input.GetMouseButtonDown(0))
-		{
-			SceneManager.LoadScene(NextScene);
-		}
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+        else if (Input.anyKeyDown || Input.GetMouseButtonDown(0) || Input.touchCount > 0)
+        {
+            SceneManager.LoadScene(NextScene);
+        }
 	}
 }

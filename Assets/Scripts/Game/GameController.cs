@@ -38,7 +38,7 @@ namespace Game
 		void Awake()
 		{
 			instance = this;
-			DontDestroyOnLoad(gameObject);
+			//DontDestroyOnLoad(gameObject);
 
 			TreasureMechanics = GetComponent<TreasureMechanics>();
 		}

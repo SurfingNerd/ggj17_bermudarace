@@ -75,6 +75,8 @@ namespace Players
         // Update is called once per frame
         void Update()
         {
+            bool isTouchInput = true;
+
             mOngoingActions.SetAll(false);
 
             //m_ongoingActions
@@ -88,16 +90,37 @@ namespace Players
                 throttle = 0;
             }
 
+            
+
 			float throttleAxis = Input.GetAxis("Fire" + (joystickIndex + 1));
 			throttle += Mathf.Abs(throttleAxis); // in release version direction is mismatched
+            
 			if(throttle == 0)
 			{
 				throttle = Input.GetButton("Jump" + (joystickIndex + 1)) ? 1 : 0;
 			}
 
-			throttle = Mathf.Min(1, throttle);
+            bool touchInputIsDetected = false;
+            if (throttle == 0 && isTouchInput)
+            {
+                float ax = UnityStandardAssets.CrossPlatformInput.CrossPlatformInputManager.GetAxis("Horizontal1");
+                float ay = UnityStandardAssets.CrossPlatformInput.CrossPlatformInputManager.GetAxis("Vertical1");
 
-			targetSpeed = throttle * MaxSpeed * (float)velocityModsTotal;
+                // dead zone
+                if (Mathf.Abs(ax) > 0.1) targetHeading.x = ax;
+                if (Mathf.Abs(ay) > 0.1) targetHeading.y = ay;
+
+                throttle = Mathf.Sqrt(ax * ax + ay * ay);
+
+                if (throttle > 0)
+                {
+                    touchInputIsDetected = true;
+                }
+            }
+
+
+			throttle = Mathf.Min(1, throttle);
+            targetSpeed = throttle * MaxSpeed * (float)velocityModsTotal;
 
 
             // update heading
@@ -148,7 +171,9 @@ namespace Players
             }
 
 			//Debug.Log(Input.GetJoystickNames().Length);
-			if (Input.GetJoystickNames().Length >= joystickIndex)
+            
+
+			if (!touchInputIsDetected && Input.GetJoystickNames().Length >= joystickIndex)
 			{
 				float ax = Input.GetAxis("Horizontal" + (joystickIndex + 1));
 				float ay = Input.GetAxis("Vertical" + (joystickIndex + 1));
@@ -157,6 +182,10 @@ namespace Players
 				if (Mathf.Abs(ax) > 0.1) targetHeading.x = ax;
 				if (Mathf.Abs(ay) > 0.1) targetHeading.y = ay;
 			}
+
+
+            
+
 
 			targetHeading.Normalize();
 
@@ -167,6 +196,10 @@ namespace Players
                 //SendMessage("CraneAction");
             }
 			
+
+
+
+
             // TODO Gamepad
 
             // TODO interpolate
