@@ -67,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012266197472}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.8537415, y: -4.1658306, z: -6.5117188}
+  m_LocalPosition: {x: 0.115007944, y: -3.5076969, z: -6.5117188}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4000013057648168}
@@ -109,13 +109,14 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: -0.03, y: 0.325}
-      - {x: -0.089999996, y: 0.305}
-      - {x: -0.14999999, y: 0.24499999}
-      - {x: -0.14999999, y: -0.285}
-      - {x: -0.13, y: -0.33499998}
-      - {x: 0.14999999, y: -0.33499998}
-      - {x: 0.14999999, y: 0.185}
-      - {x: 0.06, y: 0.325}
+      - {x: -0.051467024, y: 0.2939906}
+      - {x: -0.15550484, y: 0.063344955}
+      - {x: -0.16100945, y: -0.18041062}
+      - {x: -0.041924834, y: -0.33500004}
+      - {x: 0.045410775, y: -0.34050465}
+      - {x: 0.14952248, y: -0.17668533}
+      - {x: 0.14449516, y: 0.12995291}
+      - {x: 0.037981085, y: 0.31949544}
 --- !u!114 &114083371520120042
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -141,6 +142,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b72b51b31cfc1d84488aeb120bc05a01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpeedUpHighlight: {fileID: 1547445562880342, guid: 0548a0431155216448f7ffcac13a194f,
+    type: 2}
 --- !u!114 &114979150142008844
 MonoBehaviour:
   m_ObjectHideFlags: 1

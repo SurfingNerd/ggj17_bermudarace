@@ -8,6 +8,8 @@ namespace Treasures
 {
     public class TreasureMechanics : MonoBehaviour
     {
+        public GameObject SpeedDownHighlight;
+
         private int numTreasuresPickedUpTotal = 0;
 
         public int numTreasuresUntilApocalypse = 6;
@@ -77,7 +79,14 @@ namespace Treasures
             treasure.LastOwner = player;
 
             player.Input.AddVelocityMod(treasure, 0.9);
-            //player.
+
+            if (SpeedDownHighlight != null)
+            {
+                GameObject highlight = Instantiate(SpeedDownHighlight);
+                highlight.transform.position = player.transform.position;
+            }
+
+        //player.
         }
 
         private void TriggerApocalypse(Treasure treasure)

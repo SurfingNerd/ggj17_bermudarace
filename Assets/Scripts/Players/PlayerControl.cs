@@ -111,7 +111,7 @@ namespace Players
                 if (Mathf.Abs(ay) > 0.1) targetHeading.y = ay;
 
                 throttle = Mathf.Sqrt(ax * ax + ay * ay);
-
+                
                 if (throttle > 0)
                 {
                     touchInputIsDetected = true;

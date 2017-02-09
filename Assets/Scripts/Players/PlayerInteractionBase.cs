@@ -28,7 +28,7 @@ namespace Players
                 Player otherPlayer = collider.transform.parent.GetComponent<Player>();
                 if (otherPlayer != null)
                 {
-                    Debug.Log("Player " + otherPlayer.Name + " entered " + this.name);
+                    //Debug.Log("Player " + otherPlayer.Name + " entered " + this.name);
                     mCurrentPlayers.Add(otherPlayer);
                     OnPlayerEntered(otherPlayer);
                 }

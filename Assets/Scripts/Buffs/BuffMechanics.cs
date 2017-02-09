@@ -6,8 +6,10 @@ namespace Assets.Buffs
 {
     public class BuffMechanics : MonoBehaviour
     {
-        Player player;
+        public GameObject SpeedUpHighlight;
+       
 
+        Player player;
         HashSet<BuffBase> mBuffs = new HashSet<BuffBase>();
 
         void Awake()
@@ -41,6 +43,7 @@ namespace Assets.Buffs
         private void OnBuffAdded(BuffBase buff)
         {
             buff.InitBuff(player);
+            
         }
 
         public void AddSpeedupBuff()
@@ -49,6 +52,11 @@ namespace Assets.Buffs
             mBuffs.Add(buff);
             OnBuffAdded(buff);
 
+            if (SpeedUpHighlight)
+            {
+                GameObject highlight = Instantiate(SpeedUpHighlight);
+                highlight.transform.position = player.transform.position;
+            }
         }
     }
 }

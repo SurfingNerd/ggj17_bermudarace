@@ -29,6 +29,7 @@ namespace Game
 
 		private Player winningPlayer = null;
 
+        [HideInInspector]
 		public TreasureMechanics TreasureMechanics;
 
 		public GameObject Cthulhu;
@@ -78,11 +79,12 @@ namespace Game
 			{
 				Player player = playerGO.GetComponent<Player>();
 				player.Name = "Player " + id;
-				
-				// randomize position
-				playerGO.transform.position = new Vector2(UnityEngine.Random.Range(-4, 4), UnityEngine.Random.Range(-3, 3));
 
-				PlayerControl playerControl = playerGO.GetComponent<PlayerControl>();
+                // randomize position
+                //playerGO.transform.position = new Vector2(UnityEngine.Random.Range(-4, 4), UnityEngine.Random.Range(-3, 3));
+                playerGO.transform.position = new Vector2(id * 0.5f, 0);
+
+                PlayerControl playerControl = playerGO.GetComponent<PlayerControl>();
 				SetInputs(playerControl, id);
                 playerControl.player = player;
                 players.Add(player);
@@ -151,6 +153,14 @@ namespace Game
 
 			// Trigger apocalypse music
 			SendMessage("SoundTheApocalypseNow");
+
+            //AudioSource normalMusic = Camera.current.GetComponent<AudioSource>();
+            //if (normalMusic != null)
+            //{
+            //    normalMusic.Stop();
+            //}
+            
+           
 
 			// Trigger Camera autoscroll
 			Autoscroll autoscroll = Camera.main.GetComponent<Autoscroll>();

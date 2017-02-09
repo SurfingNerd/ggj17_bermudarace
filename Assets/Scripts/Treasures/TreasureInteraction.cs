@@ -27,7 +27,7 @@ namespace Treasures
             {
                 currentElevatingPlayer = null;
                 currentPlayersSpentElevationTime = 0;
-                Debug.Log("Canceling collecting " + Treasure.Name + " , because " + player.Name + " has left the Area.");
+                //Debug.Log("Canceling collecting " + Treasure.Name + " , because " + player.Name + " has left the Area.");
             }
         }
 

@@ -21,6 +21,8 @@ namespace Players
 
 		[HideInInspector]
 		public PlayerControl Input;
+
+        [HideInInspector]
         public BuffMechanics BuffMechanics;
 
         public HashSet<Treasure> boardedTreasures = new HashSet<Treasure>();
