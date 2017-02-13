@@ -16,7 +16,7 @@ namespace Treasures
         public AudioClip audioGotTreasure = null;
 
 
-        public double secondsToElevateATreasure = 1.5;
+        public double secondsToElevateATreasure = 0.5;
 
         void Start()
         {
@@ -34,6 +34,7 @@ namespace Treasures
         {
             int count = Treasures.Count + 1;
             Treasure treasure = new Treasure();
+            treasure.Type = interaction.Type;
             treasure.Name = "Treasure " + count.ToString();
             interaction.Treasure = treasure;
             Treasures.Add(treasure);
@@ -48,7 +49,7 @@ namespace Treasures
             return GetParentRecursive(obj.transform.parent.gameObject);
         }
 
-        public void PlayerReturnedTreasures(Player player, IEnumerable<Treasure> treasures)
+        public void PlayerReturnedTreasures(Player player)
         {
             AudioSource audioSource = GetComponent<AudioSource>();
             if (audioSource != null)
@@ -56,6 +57,26 @@ namespace Treasures
                 Debug.Log("Player returned treasures. playing " + audioGotTreasure.name + " on " + audioSource.name);
                 audioSource.PlayOneShot(audioGotTreasure);
             }
+
+            foreach (Treasure treasure in player.boardedTreasures.ToArray())
+            {
+                player.Input.RemoveVelocityMod(treasure);
+                player.securedTreasures.Add(treasure);
+                switch (treasure.Type)
+                {
+                    case TreasureType.Speed:
+                        player.BuffMechanics.AddSpeedupBuff();
+                        break;
+                    case TreasureType.PickupSpeed:
+                        player.BuffMechanics.AddSpeedupPickupBuff();
+                        break;
+                    default:
+                        break;
+                }
+
+            }
+
+            player.boardedTreasures.Clear();
         }
 
         // TODO implement

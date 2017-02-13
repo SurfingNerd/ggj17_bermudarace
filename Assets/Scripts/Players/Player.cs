@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Game;
 using Treasures;
-using Assets.Buffs;
+using Buffs;
+using Boosters;
 
 namespace Players
 {
@@ -28,11 +29,10 @@ namespace Players
         public HashSet<Treasure> boardedTreasures = new HashSet<Treasure>();
         public HashSet<Treasure> securedTreasures = new HashSet<Treasure>();
 
-        
 
-        
+        public List<BoosterBase> Boosters { get; set; }
 
-		void Awake()
+        void Awake()
 		{
 			Input = gameObject.GetComponent<PlayerControl>();
             BuffMechanics = gameObject.GetComponent<BuffMechanics>();

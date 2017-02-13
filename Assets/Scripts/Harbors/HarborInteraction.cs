@@ -26,16 +26,7 @@ namespace Harbors
 
             if (player.boardedTreasures.Count > 0)
             {
-                GameController.Instance.TreasureMechanics.PlayerReturnedTreasures(player, player.boardedTreasures);
-
-                foreach (Treasure treasure in player.boardedTreasures.ToArray())
-                {
-                    player.Input.RemoveVelocityMod(treasure);
-                    player.securedTreasures.Add(treasure);
-                    player.BuffMechanics.AddSpeedupBuff();
-                }
-
-                player.boardedTreasures.Clear();
+                GameController.Instance.TreasureMechanics.PlayerReturnedTreasures(player);
             }
             
             // PlayerReturnedTreasures

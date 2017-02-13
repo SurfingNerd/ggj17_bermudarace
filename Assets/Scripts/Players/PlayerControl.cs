@@ -117,11 +117,9 @@ namespace Players
                     touchInputIsDetected = true;
                 }
             }
-
-
+            
 			throttle = Mathf.Min(1, throttle);
             targetSpeed = throttle * MaxSpeed * (float)velocityModsTotal;
-
 
             // update heading
             if (Input.GetKeyDown(KCRight))
@@ -183,10 +181,6 @@ namespace Players
 				if (Mathf.Abs(ay) > 0.1) targetHeading.y = ay;
 			}
 
-
-            
-
-
 			targetHeading.Normalize();
 
 			if (Input.GetKeyDown(KCAction1))
@@ -195,10 +189,8 @@ namespace Players
                 
                 //SendMessage("CraneAction");
             }
-			
 
-
-
+            HandleBoosters();
 
             // TODO Gamepad
 
@@ -215,10 +207,20 @@ namespace Players
 
 			// Now in LateUpdate
 			//transform.position = transform.position + currentVelocity * Time.deltaTime;
+
+            //Input.
 		}
 
-		// After everything has updated, apply transforms
-		void LateUpdate()
+        private void HandleBoosters()
+        {
+            if (Input.GetButtonDown("Jump" + (joystickIndex + 1)))
+            {
+                Debug.Log("Booster");
+            }
+        }
+
+        // After everything has updated, apply transforms
+        void LateUpdate()
 		{
 			Vector2 compoundForce = currentVelocity;
 			foreach (ForceModification forceMod in transformModifications)
@@ -229,7 +231,7 @@ namespace Players
 			transformModifications.Clear(); // only apply once
 
             //transform.position = transform.position + (Vector3)compoundForce * Time.deltaTime;
-            transform.GetComponent<Rigidbody2D>().AddForce(compoundForce * Time.deltaTime * 100) ;
+            transform.GetComponent<Rigidbody2D>().AddForce(compoundForce * Time.deltaTime * 100);
 		}
 
 		public void AddForceModification(Vector2 force, float factor)

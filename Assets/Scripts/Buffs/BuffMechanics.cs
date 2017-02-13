@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Buffs
+namespace Buffs
 {
     public class BuffMechanics : MonoBehaviour
     {
         public GameObject SpeedUpHighlight;
        
+        public double currentTreasurePickupSpeedModifier = 1;
 
         Player player;
         HashSet<BuffBase> mBuffs = new HashSet<BuffBase>();
@@ -42,21 +43,26 @@ namespace Assets.Buffs
 
         private void OnBuffAdded(BuffBase buff)
         {
-            buff.InitBuff(player);
-            
-        }
-
-        public void AddSpeedupBuff()
-        {
-            SpeedUpBuff buff = new SpeedUpBuff();
             mBuffs.Add(buff);
-            OnBuffAdded(buff);
-
+            buff.InitBuff(player);
             if (SpeedUpHighlight)
             {
                 GameObject highlight = Instantiate(SpeedUpHighlight);
                 highlight.transform.position = player.transform.position;
             }
+        }
+
+        public void AddSpeedupPickupBuff()
+        {
+            TreasurePickupBuff buff = new TreasurePickupBuff();
+            OnBuffAdded(buff);
+             
+        }
+
+        public void AddSpeedupBuff()
+        {
+            SpeedUpBuff buff = new SpeedUpBuff();
+            OnBuffAdded(buff);
         }
     }
 }

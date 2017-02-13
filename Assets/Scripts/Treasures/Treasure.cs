@@ -10,6 +10,13 @@ namespace Treasures
     public class Treasure
     {
         public string Name;
+        public TreasureType Type = TreasureType.Speed;
         public Player LastOwner;
+    }
+
+    public enum TreasureType
+    {
+        Speed,
+        PickupSpeed
     }
 }

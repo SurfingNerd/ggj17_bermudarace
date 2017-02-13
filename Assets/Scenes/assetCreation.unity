@@ -91,6 +91,98 @@ NavMeshSettings:
     cellSize: 0.16666667
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &84458460
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 3.8803794
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -5.3335714
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011803864617860, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_Name
+      value: TreasurePickup (7)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &103740592
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 3.8803794
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -5.3335714
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011803864617860, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_Name
+      value: TreasurePickup (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &112193467 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1334109006306774, guid: 4a1d2d61ea606c74398272f98dab6499,
@@ -107,6 +199,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f53e2280482fd4eae834415b52de1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &113110394
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 3.8803794
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -5.3335714
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011803864617860, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_Name
+      value: TreasurePickup (5)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &140276015 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1547445562880342, guid: 0548a0431155216448f7ffcac13a194f,
@@ -123,6 +261,144 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f53e2280482fd4eae834415b52de1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &168602452
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 3.8803794
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -5.3335714
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011803864617860, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_Name
+      value: TreasurePickup (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &178224648
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -5.3335714
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011803864617860, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_Name
+      value: TreasurePickup (13)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &185166228
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 3.8803794
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -5.3335714
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011803864617860, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_Name
+      value: TreasurePickup (8)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &212052512
 Prefab:
   m_ObjectHideFlags: 0
@@ -160,7 +436,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4138132656503192, guid: 4a1d2d61ea606c74398272f98dab6499, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1334109006306774, guid: 4a1d2d61ea606c74398272f98dab6499, type: 2}
       propertyPath: m_Name
@@ -211,7 +487,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4776775604794330, guid: 0548a0431155216448f7ffcac13a194f, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1547445562880342, guid: 0548a0431155216448f7ffcac13a194f, type: 2}
       propertyPath: m_Name
@@ -327,7 +603,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4024239586445956, guid: fcef73f1668390c4c89a712d5cfa4071, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fcef73f1668390c4c89a712d5cfa4071, type: 2}
@@ -380,6 +656,190 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45bd585e4339488408aac09ad2a33423, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &557736615
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -5.3335714
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_RootOrder
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011803864617860, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_Name
+      value: TreasurePickup (17)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &562163829
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 3.8803794
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -5.3335714
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011803864617860, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_Name
+      value: TreasurePickup (10)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &573897057
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -5.3335714
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_RootOrder
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011803864617860, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_Name
+      value: TreasurePickup (15)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &732229968
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 3.8803794
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -5.3335714
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011803864617860, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_Name
+      value: TreasurePickup (6)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &745720696
 Prefab:
   m_ObjectHideFlags: 0
@@ -417,10 +877,148 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4190593698292698, guid: dbe9d522601830845949957a4a781409, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dbe9d522601830845949957a4a781409, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &1178100208
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 3.8803794
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -5.3335714
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011803864617860, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_Name
+      value: TreasurePickup (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &1227416805
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 4.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -5.3335714
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011803864617860, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_Name
+      value: TreasurePickup (11)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &1280504831
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -4.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011803864617860, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_Name
+      value: TreasurePickup (12)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1305121599
 Prefab:
@@ -459,8 +1057,234 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4138132656503192, guid: 4a1d2d61ea606c74398272f98dab6499, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4a1d2d61ea606c74398272f98dab6499, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &1352643955
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -5.3335714
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011803864617860, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_Name
+      value: TreasurePickup (9)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &1491473641
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -5.3335714
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011803864617860, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_Name
+      value: TreasurePickup (14)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &1664303442
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 3.8803794
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -5.3335714
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011803864617860, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_Name
+      value: TreasurePickup (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &1928761267
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 3.8803794
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -5.3335714
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_RootOrder
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011803864617860, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_Name
+      value: TreasurePickup (16)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &2049147806
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 3.8803794
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -5.3335714
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560407932355952, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 28bd34b259efd824e955edda0f5cecc3, type: 2}
   m_IsPrefabParent: 0

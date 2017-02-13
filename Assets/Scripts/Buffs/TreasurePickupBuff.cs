@@ -6,20 +6,19 @@ using Players;
 
 namespace Buffs
 {
-    public class SpeedUpBuff : BuffBase
+    sealed class TreasurePickupBuff : BuffBase
     {
-        public double SpeedUpFactor = 1.3;
+        private readonly double modifier = 1.3;
 
         public override void InitBuff(Player player)
         {
+            player.BuffMechanics.currentTreasurePickupSpeedModifier += modifier;
             base.InitBuff(player);
-
-            player.Input.AddVelocityMod(this, SpeedUpFactor);
         }
 
         public override void BuffEnded(Player player)
         {
-            player.Input.RemoveVelocityMod(this);
+            player.BuffMechanics.currentTreasurePickupSpeedModifier -= modifier;
             base.BuffEnded(player);
         }
     }

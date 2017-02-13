@@ -10,7 +10,6 @@ public class Autoscroll : MonoBehaviour {
     
 	public GameObject AutoscrollKillBar;
 
-
     private float timeLapsed;
 
     // Use this for initialization

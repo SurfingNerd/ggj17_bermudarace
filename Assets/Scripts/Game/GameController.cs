@@ -137,44 +137,51 @@ namespace Game
 			}
 		}
 
+        bool mApocolypeseIsTriggered;
 		public void TriggerApocalypse()
 		{
-			Debug.Log("APOCALPYPSE INCOMING! (todo)");
 
-			// Trigger big Cthulhu - instakill on contact
-			GameObject cthulhu = GameObject.Instantiate(Cthulhu);
-			cthulhu.transform.parent = Camera.main.transform;
+            if (!mApocolypeseIsTriggered)
+            {
+                mApocolypeseIsTriggered = true;
 
-			// Trigger a few Deep Ones on islands - slow down players if close
-			// ?
+                Debug.Log("APOCALPYPSE INCOMING! (todo)");
 
-			// Trigger apocalypse camera filter
-			// ?
+                // Trigger big Cthulhu - instakill on contact
+                GameObject cthulhu = GameObject.Instantiate(Cthulhu);
+                cthulhu.transform.parent = Camera.main.transform;
 
-			// Trigger apocalypse music
-			SendMessage("SoundTheApocalypseNow");
+                // Trigger a few Deep Ones on islands - slow down players if close
+                // ?
 
-            //AudioSource normalMusic = Camera.current.GetComponent<AudioSource>();
-            //if (normalMusic != null)
-            //{
-            //    normalMusic.Stop();
-            //}
-            
-           
+                // Trigger apocalypse camera filter
+                // ?
 
-			// Trigger Camera autoscroll
-			Autoscroll autoscroll = Camera.main.GetComponent<Autoscroll>();
-			if(autoscroll != null)
-			{
-				autoscroll.enabled = true;
-			}
+                // Trigger apocalypse music
+                SendMessage("SoundTheApocalypseNow");
 
-			// Activate Death trigger at left screen edge
-			Transform killbar = Camera.main.transform.FindChild("AutoscrollKillBar");
-			if(killbar != null)
-			{
-				killbar.gameObject.SetActive(true);
-			}
+                //AudioSource normalMusic = Camera.current.GetComponent<AudioSource>();
+                //if (normalMusic != null)
+                //{
+                //    normalMusic.Stop();
+                //}
+
+
+
+                // Trigger Camera autoscroll
+                Autoscroll autoscroll = Camera.main.GetComponent<Autoscroll>();
+                if (autoscroll != null)
+                {
+                    autoscroll.enabled = true;
+                }
+
+                // Activate Death trigger at left screen edge
+                Transform killbar = Camera.main.transform.FindChild("AutoscrollKillBar");
+                if (killbar != null)
+                {
+                    killbar.gameObject.SetActive(true);
+                }
+            }
 		}
 
         public void PlayerReachedGoal(Player player)

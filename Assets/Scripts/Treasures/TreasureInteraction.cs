@@ -7,16 +7,20 @@ using Game;
 
 namespace Treasures
 {
+
+
     public class TreasureInteraction : PlayerInteractionBase
     {
         public Treasure Treasure;
+
+        public TreasureType Type = TreasureType.Speed;
 
         private Player currentElevatingPlayer;
         //how many % the treasure is picked up.
         private double currentPlayersSpentElevationTime;
         
 
-        public TreasureInteraction() : base()
+        public TreasureInteraction()
         {
         }
 
@@ -55,7 +59,7 @@ namespace Treasures
                 //double spentElevationTime = Time.deltaTime / GameController.Instance.TreasureMechanics.secondsToElevateATreasure;
                 currentPlayersSpentElevationTime += Time.deltaTime;
 
-                if (currentPlayersSpentElevationTime >= GameController.Instance.TreasureMechanics.secondsToElevateATreasure)
+                if (currentPlayersSpentElevationTime >= GameController.Instance.TreasureMechanics.secondsToElevateATreasure * (1 / currentElevatingPlayer.BuffMechanics.currentTreasurePickupSpeedModifier))
                 {
                     Debug.Log(currentElevatingPlayer.Name + " got Treasure " + Treasure.Name);
                     GameController.Instance.TreasureMechanics.PlayerPickedUpTreasure(currentElevatingPlayer, Treasure);

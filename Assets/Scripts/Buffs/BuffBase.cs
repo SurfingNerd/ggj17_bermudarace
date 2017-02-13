@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Assets.Buffs
+namespace Buffs
 {
     public abstract class BuffBase
     {
-        public double maxDuration = 30;
+        public double maxDuration = 45;
         public double durationLeft = 30;
 
         public virtual void InitBuff(Player player)
@@ -27,3 +27,4 @@ namespace Assets.Buffs
         }
     }
 }
+
