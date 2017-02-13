@@ -75,6 +75,8 @@ namespace Players
         // Update is called once per frame
         void Update()
         {
+            //Debug.Log("Checking controller " + joystickIndex);
+
             bool isTouchInput = true;
 
             mOngoingActions.SetAll(false);

@@ -36,7 +36,9 @@ namespace Game
 
         public int Players = 1;
 
-		void Awake()
+        public GameMode GameMode = GameMode.Coop;
+
+        void Awake()
 		{
 			instance = this;
 			//DontDestroyOnLoad(gameObject);
@@ -102,11 +104,11 @@ namespace Game
 
 		void SetInputs(PlayerControl playerControl, int id)
 		{
-			switch(id)
+            playerControl.joystickIndex = id;
+            switch (id)
 			{
 				case 1:
 					// use defaults
-					playerControl.joystickIndex = 0;
 					break;
 				case 2:
 					playerControl.KCUp = KeyCode.W;
@@ -116,8 +118,7 @@ namespace Game
 
 					playerControl.KCThrottle = KeyCode.LeftShift;
 					playerControl.KCAction1 = KeyCode.E;
-
-					playerControl.joystickIndex = 1;
+					
 					break;
 			}
 		}
@@ -204,7 +205,7 @@ namespace Game
 			Debug.Log("Player " + player.Name + " died!");
 			players.Remove(player);
 
-			if(players.Count == 1)
+			if(players.Count == 1 && GameMode == GameMode.Vs)
 			{
 				PlayerReachedGoal(players[0]);
 			}
