@@ -99,7 +99,7 @@ namespace Treasures
 
             treasure.LastOwner = player;
 
-            player.Input.AddVelocityMod(treasure, 0.9);
+            player.Input.AddVelocityMod(treasure, 0.93);
 
             if (SpeedDownHighlight != null)
             {

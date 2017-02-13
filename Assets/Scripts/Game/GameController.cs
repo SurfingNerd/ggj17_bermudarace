@@ -55,7 +55,12 @@ namespace Game
 
             for (int i = 1; i <= Players; i++)
             {
-                CreatePlayer(i);
+                int numConnectedJoysticks = Input.GetJoystickNames().Length;
+
+                if (i <= numConnectedJoysticks || numConnectedJoysticks == 0)
+                {
+                    CreatePlayer(i);
+                }
             }
 			//CreatePlayer(1);
 			//CreatePlayer(2);

@@ -51,12 +51,18 @@ namespace Players
 		//	requestpickup = true;
 		//}
 
+
+
+        private bool isKilled = false;
 		public void Kill()
 		{
-			// Trigger sinking animation?
-
-			GameController.Instance.PlayerDied(this);
-            GameObject.Destroy(gameObject);
+            // Trigger sinking animation?
+            if (!isKilled)
+            {
+                GameController.Instance.PlayerDied(this);
+                GameObject.Destroy(gameObject);
+                isKilled = true;
+            }
         }
     }
 }
