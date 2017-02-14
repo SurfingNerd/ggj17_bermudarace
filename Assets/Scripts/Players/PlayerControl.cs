@@ -5,6 +5,7 @@ using System;
 
 namespace Players
 {
+
     public class PlayerControl : MonoBehaviour
     {
         public PlayerControl()
@@ -37,6 +38,7 @@ namespace Players
 		public int joystickIndex = 0;
 
 		private float throttle = 0; // player input speed command
+
         private float targetSpeed = 0;
         private float currentSpeed = 0;
 
@@ -44,6 +46,7 @@ namespace Players
         private Vector3 currentHeading; // direction the ship is pointing
 
         private VelocityModCollection velocityMods = new VelocityModCollection();
+        private Rigidbody2D mRigidBody2D;
 
         [HideInInspector]
         public Player player;
@@ -68,135 +71,33 @@ namespace Players
             currentHeading = new Vector3(0, 1);
             player = GetComponent<Player>();
 			transformModifications = new List<ForceModification>();
-		}
+            mRigidBody2D = GetComponent<Rigidbody2D>();
 
-        
+        }
 
-        // Update is called once per frame
+
         void Update()
         {
-            //Debug.Log("Checking controller " + joystickIndex);
+            targetHeading.x = 0;
+            targetHeading.y = 0;
+            targetHeading.z = 0;
 
-            bool isTouchInput = true;
+            float ax = UnityStandardAssets.CrossPlatformInput.CrossPlatformInputManager.GetAxis("Horizontal" + joystickIndex);
+            float ay = UnityStandardAssets.CrossPlatformInput.CrossPlatformInputManager.GetAxis("Vertical" + joystickIndex);
 
-            mOngoingActions.SetAll(false);
+            // dead zone
+            if (Mathf.Abs(ax) > 0.1) targetHeading.x = ax;
+            if (Mathf.Abs(ay) > 0.1) targetHeading.y = ay;
 
-            //m_ongoingActions
-
-            if (Input.GetKey(KCThrottle))
-            {
-                throttle = 1;
-            }
-            else
-            {
-                throttle = 0;
-            }
-
-            
-
-			float throttleAxis = Input.GetAxis("Fire" + (joystickIndex + 1));
-			throttle += Mathf.Abs(throttleAxis); // in release version direction is mismatched
-            
-			if(throttle == 0)
-			{
-				throttle = Input.GetButton("Jump" + (joystickIndex + 1)) ? 1 : 0;
-			}
-
-            bool touchInputIsDetected = false;
-            if (throttle == 0 && isTouchInput)
-            {
-                float ax = UnityStandardAssets.CrossPlatformInput.CrossPlatformInputManager.GetAxis("Horizontal1");
-                float ay = UnityStandardAssets.CrossPlatformInput.CrossPlatformInputManager.GetAxis("Vertical1");
-
-                // dead zone
-                if (Mathf.Abs(ax) > 0.1) targetHeading.x = ax;
-                if (Mathf.Abs(ay) > 0.1) targetHeading.y = ay;
-
-                throttle = Mathf.Sqrt(ax * ax + ay * ay);
-                
-                if (throttle > 0)
-                {
-                    touchInputIsDetected = true;
-                }
-            }
-            
-			throttle = Mathf.Min(1, throttle);
+            throttle = targetHeading.magnitude; //Mathf.Sqrt(ax * ax + ay * ay);
+            targetHeading.Normalize();
+            throttle = Mathf.Min(1, throttle);
             targetSpeed = throttle * MaxSpeed * (float)velocityModsTotal;
 
-            // update heading
-            if (Input.GetKeyDown(KCRight))
-            {
-                targetHeading.x = 1;
-
-                if (!Input.GetKey(KCUp) && !Input.GetKey(KCDown))
-                {
-                    targetHeading.y = 0;
-                }
-            }
-            if (Input.GetKeyDown(KCLeft))
-            {
-                targetHeading.x = -1;
-
-                if (!Input.GetKey(KCUp) && !Input.GetKey(KCDown))
-                {
-                    targetHeading.y = 0;
-                }
-            }
-            if (Input.GetKey(KCUp))
-            {
-                targetHeading.y = 1;
-
-                if (!Input.GetKey(KCLeft) && !Input.GetKey(KCRight))
-                {
-                    targetHeading.x = 0;
-                }
-            }
-            if (Input.GetKey(KCDown))
-            {
-                targetHeading.y = -1;
-
-                if (!Input.GetKey(KCLeft) && !Input.GetKey(KCRight))
-                {
-                    targetHeading.x = 0;
-                }
-            }
-
-			if ((Input.GetKeyUp(KCRight) || Input.GetKeyUp(KCLeft)) && !Input.GetKey(KCUp) && !Input.GetKey(KCDown))
-            {
-                targetHeading.y = 0;
-            }
-            if ((Input.GetKeyUp(KCUp) || Input.GetKeyUp(KCDown)) && !Input.GetKey(KCLeft) && !Input.GetKey(KCRight))
-            {
-                targetHeading.x = 0;
-            }
-
-			//Debug.Log(Input.GetJoystickNames().Length);
             
 
-			if (!touchInputIsDetected && Input.GetJoystickNames().Length >= joystickIndex)
-			{
-				float ax = Input.GetAxis("Horizontal" + (joystickIndex + 1));
-				float ay = Input.GetAxis("Vertical" + (joystickIndex + 1));
-
-				// dead zone
-				if (Mathf.Abs(ax) > 0.1) targetHeading.x = ax;
-				if (Mathf.Abs(ay) > 0.1) targetHeading.y = ay;
-			}
-
-			targetHeading.Normalize();
-
-			if (Input.GetKeyDown(KCAction1))
-			{
-                NotifyAction(ActionType.CRANE_ACTION);
-                
-                //SendMessage("CraneAction");
-            }
-
             HandleBoosters();
-
-            // TODO Gamepad
-
-            // TODO interpolate
+            
             currentSpeed = targetSpeed;
             currentHeading = targetHeading;
 
@@ -204,14 +105,14 @@ namespace Players
             transform.rotation = Quaternion.FromToRotation(Vector3.up, currentHeading);
 
             // apply throttle
-			currentForce = currentHeading * currentSpeed;
-			currentVelocity = Vector3.Lerp(currentVelocity, currentForce, 0.1f); // HACK
+            currentForce = currentHeading * currentSpeed;
+            currentVelocity = Vector3.Lerp(currentVelocity, currentForce, 0.1f); // HACK
 
-			// Now in LateUpdate
-			//transform.position = transform.position + currentVelocity * Time.deltaTime;
+            // Now in LateUpdate
+            //transform.position = transform.position + currentVelocity * Time.deltaTime;
 
-            //Input.
-		}
+            //Input.            
+        }
 
         private void HandleBoosters()
         {
@@ -227,13 +128,14 @@ namespace Players
 			Vector2 compoundForce = currentVelocity;
 			foreach (ForceModification forceMod in transformModifications)
 			{
-				// HACK this only really works for one mod at a time, otherwise effect depends on order
-				compoundForce = Vector2.Lerp(compoundForce, forceMod.vector, forceMod.factor);
-			}
+                compoundForce += forceMod.vector * forceMod.factor;
+                // HACK this only really works for one mod at a time, otherwise effect depends on order
+                //compoundForce = Vector2.Lerp(compoundForce, forceMod.vector, forceMod.factor);
+            }
 			transformModifications.Clear(); // only apply once
 
             //transform.position = transform.position + (Vector3)compoundForce * Time.deltaTime;
-            transform.GetComponent<Rigidbody2D>().AddForce(compoundForce * Time.deltaTime * 100);
+            mRigidBody2D.AddForce(compoundForce * Time.deltaTime * 100);
 		}
 
 		public void AddForceModification(Vector2 force, float factor)

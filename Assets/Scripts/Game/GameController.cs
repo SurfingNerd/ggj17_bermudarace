@@ -35,6 +35,7 @@ namespace Game
 		public GameObject Cthulhu;
 
         public int Players = 1;
+        public bool debugControls = false;
 
         public GameMode GameMode = GameMode.Coop;
 
@@ -50,7 +51,6 @@ namespace Game
 		void Start()
 		{
 			winningPlayer = null;
-
 			players = new List<Player>();
 
             for (int i = 1; i <= Players; i++)
@@ -94,6 +94,8 @@ namespace Game
                 PlayerControl playerControl = playerGO.GetComponent<PlayerControl>();
 				SetInputs(playerControl, id);
                 playerControl.player = player;
+
+
                 players.Add(player);
 
                 Debug.Log("Adding Player " + player.Name);
@@ -109,6 +111,7 @@ namespace Game
 
 		void SetInputs(PlayerControl playerControl, int id)
 		{
+            Debug.Log("Setting Inputs for Inputdevide " + id);
             playerControl.joystickIndex = id;
             switch (id)
 			{
@@ -123,7 +126,6 @@ namespace Game
 
 					playerControl.KCThrottle = KeyCode.LeftShift;
 					playerControl.KCAction1 = KeyCode.E;
-					
 					break;
 			}
 		}
