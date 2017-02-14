@@ -8,7 +8,7 @@ namespace Buffs
 {
     sealed class TreasurePickupBuff : BuffBase
     {
-        private readonly double modifier = 1.2;
+        private readonly float modifier = 1.2f;
 
         public override void InitBuff(Player player)
         {

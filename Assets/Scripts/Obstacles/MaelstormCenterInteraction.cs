@@ -15,15 +15,12 @@ namespace Obstacles
 
         protected override void OnPlayerEntered(Player player)
         {
-            base.OnPlayerEntered(player);
-
             mPlayerInMaelstormTime.Add(player, Time.deltaTime);
         }
 
 
         protected override void OnPlayerLeft(Player player)
         {
-            base.OnPlayerLeft(player);
             if (mPlayerInMaelstormTime.ContainsKey(player))
             {
                 mPlayerInMaelstormTime.Remove(player);

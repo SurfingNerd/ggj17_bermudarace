@@ -9,6 +9,7 @@ namespace Treasures
     public class TreasureMechanics : MonoBehaviour
     {
         public GameObject SpeedDownHighlight;
+        public GameObject ProgressBarPrefab;
 
         private int numTreasuresPickedUpTotal = 0;
 
@@ -16,7 +17,7 @@ namespace Treasures
         public AudioClip audioGotTreasure = null;
 
 
-        public double secondsToElevateATreasure = 0.5;
+        public float secondsToElevateATreasure = 0.5f;
 
         void Start()
         {
@@ -29,7 +30,9 @@ namespace Treasures
 
         [HideInInspector]
         public Dictionary<Treasure, TreasureInteraction> TreasureInteractions = new Dictionary<Treasure, TreasureInteraction>();
-        
+
+        public bool DebugLog = true;
+
         public void InitTreasureInteraction(TreasureInteraction interaction)
         {
             int count = Treasures.Count + 1;
@@ -73,7 +76,6 @@ namespace Treasures
                     default:
                         break;
                 }
-
             }
 
             player.boardedTreasures.Clear();

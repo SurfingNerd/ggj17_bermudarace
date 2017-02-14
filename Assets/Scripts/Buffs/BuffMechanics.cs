@@ -8,7 +8,7 @@ namespace Buffs
     {
         public GameObject SpeedUpHighlight;
        
-        public double currentTreasurePickupSpeedModifier = 1;
+        public float currentTreasurePickupSpeedModifier = 1;
 
         Player player;
         HashSet<BuffBase> mBuffs = new HashSet<BuffBase>();

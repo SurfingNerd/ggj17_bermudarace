@@ -22,8 +22,6 @@ namespace Harbors
 
         protected override void OnPlayerEntered(Player player)
         {
-            base.OnPlayerEntered(player);
-
             if (player.boardedTreasures.Count > 0)
             {
                 GameController.Instance.TreasureMechanics.PlayerReturnedTreasures(player);
@@ -33,6 +31,11 @@ namespace Harbors
 
 
             //TODO: Update UI.
+        }
+
+        protected override void OnPlayerLeft(Player player)
+        {
+            
         }
 
 

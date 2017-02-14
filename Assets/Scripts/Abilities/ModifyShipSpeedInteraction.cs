@@ -12,13 +12,11 @@ namespace Assets.Scripts.Abilities
 
         protected override void OnPlayerEntered(Player player)
         {
-            base.OnPlayerEntered(player);
             player.Input.AddVelocityMod(this, modifyFactor);
         }
 
         protected override void OnPlayerLeft(Player player)
         {
-            base.OnPlayerLeft(player);
             player.Input.RemoveVelocityMod(this);
         }
     }

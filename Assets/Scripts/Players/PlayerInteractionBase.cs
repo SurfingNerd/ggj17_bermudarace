@@ -11,15 +11,12 @@ namespace Players
         //protected abstract String GetObjectName();
         protected HashSet<Player> mCurrentPlayers = new HashSet<Player>();
 
-        protected virtual void OnPlayerEntered(Player player)
-        {
+        protected abstract void OnPlayerEntered(Player player);
 
-        }
 
-        protected virtual void OnPlayerLeft(Player player)
-        {
 
-        }
+        protected abstract void OnPlayerLeft(Player player);
+        
 
         public void OnTriggerEnter2D(Collider2D collider)
         {
