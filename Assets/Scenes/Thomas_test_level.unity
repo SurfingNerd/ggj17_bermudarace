@@ -35856,22 +35856,22 @@ Prefab:
     - target: {fileID: 114396365457982346, guid: 45bd585e4339488408aac09ad2a33423,
         type: 2}
       propertyPath: SpeedControl.m_Curve.Array.data[3].value
-      value: 0.5408387
+      value: 0.41040903
       objectReference: {fileID: 0}
     - target: {fileID: 114396365457982346, guid: 45bd585e4339488408aac09ad2a33423,
         type: 2}
       propertyPath: SpeedControl.m_Curve.Array.data[3].time
-      value: 0.10525085
+      value: 0.11136703
       objectReference: {fileID: 0}
     - target: {fileID: 114396365457982346, guid: 45bd585e4339488408aac09ad2a33423,
         type: 2}
       propertyPath: SpeedControl.m_Curve.Array.data[3].inSlope
-      value: 0.0577677
+      value: 0.49014693
       objectReference: {fileID: 0}
     - target: {fileID: 114396365457982346, guid: 45bd585e4339488408aac09ad2a33423,
         type: 2}
       propertyPath: SpeedControl.m_Curve.Array.data[3].outSlope
-      value: 0.0577677
+      value: 0.49014693
       objectReference: {fileID: 0}
     - target: {fileID: 114396365457982346, guid: 45bd585e4339488408aac09ad2a33423,
         type: 2}
@@ -35906,17 +35906,17 @@ Prefab:
     - target: {fileID: 114396365457982346, guid: 45bd585e4339488408aac09ad2a33423,
         type: 2}
       propertyPath: SpeedControl.m_Curve.Array.data[2].time
-      value: 0.022605406
+      value: 0.07153487
       objectReference: {fileID: 0}
     - target: {fileID: 114396365457982346, guid: 45bd585e4339488408aac09ad2a33423,
         type: 2}
       propertyPath: SpeedControl.m_Curve.Array.data[2].inSlope
-      value: 5.420968
+      value: 1.406951
       objectReference: {fileID: 0}
     - target: {fileID: 114396365457982346, guid: 45bd585e4339488408aac09ad2a33423,
         type: 2}
       propertyPath: SpeedControl.m_Curve.Array.data[2].outSlope
-      value: 5.420968
+      value: 1.406951
       objectReference: {fileID: 0}
     - target: {fileID: 114396365457982346, guid: 45bd585e4339488408aac09ad2a33423,
         type: 2}
@@ -35931,7 +35931,7 @@ Prefab:
     - target: {fileID: 114396365457982346, guid: 45bd585e4339488408aac09ad2a33423,
         type: 2}
       propertyPath: SpeedControl.m_Curve.Array.data[2].value
-      value: 0.48322445
+      value: 0.28447446
       objectReference: {fileID: 0}
     - target: {fileID: 114396365457982346, guid: 45bd585e4339488408aac09ad2a33423,
         type: 2}
@@ -35952,6 +35952,11 @@ Prefab:
         type: 2}
       propertyPath: SpeedControl.m_Curve.Array.data[6].value
       value: 0.99375
+      objectReference: {fileID: 0}
+    - target: {fileID: 114396365457982346, guid: 45bd585e4339488408aac09ad2a33423,
+        type: 2}
+      propertyPath: TotalDuration
+      value: 140
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45bd585e4339488408aac09ad2a33423, type: 2}
