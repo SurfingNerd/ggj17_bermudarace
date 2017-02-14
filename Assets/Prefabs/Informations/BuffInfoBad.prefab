@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 917e31574ac87bf4f998cb231a901617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seconds: 5
+  seconds: 3
   maxScale: 5
   animationCurve:
     serializedVersion: 2
