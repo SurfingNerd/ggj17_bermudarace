@@ -184,7 +184,7 @@ namespace Game
                 }
 
                 // Activate Death trigger at left screen edge
-                Transform killbar = Camera.main.transform.FindChild("AutoscrollKillBar");
+                Transform killbar = Camera.main.transform.Find("AutoscrollKillBar");
                 if (killbar != null)
                 {
                     killbar.gameObject.SetActive(true);

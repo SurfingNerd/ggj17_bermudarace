@@ -85,6 +85,20 @@ namespace Players
             float ax = UnityStandardAssets.CrossPlatformInput.CrossPlatformInputManager.GetAxis("Horizontal" + joystickIndex);
             float ay = UnityStandardAssets.CrossPlatformInput.CrossPlatformInputManager.GetAxis("Vertical" + joystickIndex);
 
+            if (this.joystickIndex == 1) 
+            {
+                if (ax == 0 && ay == 0)
+                {
+                    if (Input.GetMouseButton(0))
+                    {
+                        var shipPos = Camera.main.WorldToScreenPoint(mRigidBody2D.transform.position);
+
+                        ax = Input.mousePosition.x - shipPos.x;
+                        ay = Input.mousePosition.y - shipPos.y;
+                    }
+                }
+            }
+
             // dead zone
             if (Mathf.Abs(ax) > 0.1) targetHeading.x = ax;
             if (Mathf.Abs(ay) > 0.1) targetHeading.y = ay;
@@ -96,7 +110,7 @@ namespace Players
 
             
 
-            HandleBoosters();
+            //HandleBoosters();
             
             currentSpeed = targetSpeed;
             currentHeading = targetHeading;
@@ -114,13 +128,13 @@ namespace Players
             //Input.            
         }
 
-        private void HandleBoosters()
-        {
-            if (Input.GetButtonDown("Jump" + (joystickIndex + 1)))
-            {
-                Debug.Log("Booster");
-            }
-        }
+        // private void HandleBoosters()
+        // { 
+        //     if (Input.GetButtonDown("Jump" + (joystickIndex + 1)))
+        //     {
+        //         Debug.Log("Booster");
+        //     }
+        // }
 
         // After everything has updated, apply transforms
         void LateUpdate()

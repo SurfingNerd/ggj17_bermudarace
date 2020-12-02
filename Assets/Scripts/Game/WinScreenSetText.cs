@@ -14,7 +14,9 @@ public class WinScreenSetText : MonoBehaviour {
 		{
 			winningPlayer = GameController.Instance.getWinningPlayer();
 		}
-		GUIText text = GetComponent<GUIText>();
+
+		
+		UnityEngine.UI.Text text = GetComponent<UnityEngine.UI.Text>();
 		
 		if (winningPlayer != null && text != null)
 		{
